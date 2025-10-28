@@ -14,7 +14,7 @@ import { motion, AnimatePresence } from "framer-motion";
 // import T2 from "../assets/images/T2.jpg";
 // import T3 from "../assets/images/T3.jpg";
 // import T4 from "../assets/images/T4.jpg";
-import OT from "../assets/images/OT.jpg";
+// import OT from "../assets/images/OT.jpg";
 <motion.div
 
   initial={{ opacity: 0, x: -50 }}
@@ -297,25 +297,25 @@ const About = () => {
         {
           name: "Sri Ranjan Bellarpady",
           role: "Managing Trustee",
-          img: T1,
+          img: "https://i.ibb.co/r25tK9dG/T1.jpg",
           fb: "https://www.facebook.com/ranjanbellarpady",
         },
         {
           name: "Mr. Bellala Gopinath Rao",
           role: "Trustee",
-          img: T2,
+          img: "https://i.ibb.co/FbnGG6x1/T2.jpg",
           fb: "https://www.facebook.com/bellalagopinath.rao",
         },
         {
           name: "Mr. Dilraj Alva",
           role: "Trustee",
-          img: T3,
+          img: "https://i.ibb.co/wF2njygL/T3.jpg",
           fb: "https://www.facebook.com/dilraj.alva",
         },
         {
           name: "Mr. Vinay P M",
           role: "Trustee",
-          img: T4,
+          img: "https://i.ibb.co/YTWm6WDJ/T4.jpg",
           fb: "https://www.facebook.com/vinay.pm.3/",
         },
       ].map((person, i) => (
@@ -329,7 +329,7 @@ const About = () => {
         >
           <div className="overflow-hidden rounded-xl mb-4">
             <img
-              src="https://i.ibb.co/r25tK9dG/T1.jpg,https://i.ibb.co/FbnGG6x1/T2.jpg,https://i.ibb.co/wF2njygL/T3.jpg,https://i.ibb.co/YTWm6WDJ/T4.jpg"
+              src={person.img}
               alt={person.name}
               className="object-cover w-full h-60 rounded-xl hover:scale-105 transition-transform duration-500"
             />
@@ -484,11 +484,11 @@ const About = () => {
         viewport={{ once: true }}
         className="grid grid-cols-2 gap-3 w-full lg:w-64 flex-shrink-0 self-stretch"
       >
-        {[work1, work2, work3, work4, work5, work6].map((src, i) => (
+        {["https://i.ibb.co/yB5C9nxZ/F1.jpg", "https://i.ibb.co/5W8M2wmW/F2.jpg", "https://i.ibb.co/m5fHJYzt/F3.jpg", "https://i.ibb.co/0vJzXLQ/F4.jpg", "https://i.ibb.co/V0k4Zxv0/F5.jpg", "https://i.ibb.co/DHpfgFyN/F6.jpg"].map((src, i) => (
           <a key={i} href={src} download className="block h-full">
             <div className="overflow-hidden rounded-xl shadow-lg border border-white/20 group relative w-full h-full min-h-[150px]">
               <img
-                src="https://ibb.co/HpYySD9b,https://i.ibb.co/5W8M2wmW/F2.jpg,https://i.ibb.co/m5fHJYzt/F3.jpg,https://i.ibb.co/0vJzXLQ/F4.jpg,https://i.ibb.co/V0k4Zxv0/F5.jpg,https://i.ibb.co/DHpfgFyN/F6.jpg"
+                src={src}
                 alt={`Work ${i + 1}`}
                 className="object-cover w-full h-full group-hover:scale-110 transition-transform duration-500"
               />
@@ -527,7 +527,7 @@ const About = () => {
         <div className="overflow-hidden rounded-md shadow-sm bg-gray-50">
           <div className="aspect-square flex justify-center items-center">
             <img
-              src={OT}
+              src="https://i.ibb.co/1fPg7kZt/OT.jpg"
               alt="Mr. Shashidhar M"
               className="w-full h-full object-cover rounded-md transition-transform duration-500 hover:scale-105"
             />

@@ -3,24 +3,24 @@ import { motion, AnimatePresence } from "framer-motion";
 import bg from "../assets/images/back.jpg";
 
 // Add your gallery images - replace these with your actual images
-import gallery1 from "../assets/images/1H.jpg";
-import gallery2 from "../assets/images/2H.jpg";
-import gallery3 from "../assets/images/3H.JPG";
-import gallery4 from "../assets/images/4H.JPG";
-import gallery5 from "../assets/images/1O.jpg";
-import gallery6 from "../assets/images/3O.JPG";
+// import gallery1 from "../assets/images/1H.jpg";
+// import gallery2 from "../assets/images/2H.jpg";
+// import gallery3 from "../assets/images/3H.JPG";
+// import gallery4 from "../assets/images/4H.JPG";
+// import gallery5 from "../assets/images/1O.jpg";
+// import gallery6 from "../assets/images/3O.JPG";
 
 const GallerySlider = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [isAutoPlaying, setIsAutoPlaying] = useState(true);
 
   const galleryImages = [
-    { src: gallery1 },
-    { src: gallery2 },
-    { src: gallery3 },
-    { src: gallery4 },
-    { src: gallery5 },
-    { src: gallery6 },
+    { src: "https://i.ibb.co/cSBjJZyK/1H.jpg" },
+    { src: "https://i.ibb.co/XxXWCMjJ/2H.jpg" },
+    { src: "https://i.ibb.co/cXtt8qWf/4H.jpg" },
+    { src: "https://i.ibb.co/v65mT2RX/3H.jpg" },
+    { src: "https://i.ibb.co/cSBjJZyK/1H.jpg" },
+    { src: "https://i.ibb.co/cXtt8qWf/4H.jpg" },
   ];
 
   // Group images into sets of 3
