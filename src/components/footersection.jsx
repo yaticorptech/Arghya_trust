@@ -54,12 +54,17 @@ const FooterSection = () => {
     },
   ];
 
-  const contactInfo = {
-    visit: "Arghya Trust, Mangaluru",
-    phone: "+91 744 844 1972",
-    mail: "contact@arghyatrust.org",
-    website: "www.arghyatrust.org",
-  };
+const contactInfo = {
+  visit: `Arghya Trust
+
+# Viveka Kutira 
+C/O Vidya Umesh, Behind 'Seetha Nilaya', Old Post Office, Srirangapatna,
+Mandya, KA - 571438`,
+  phone: "+91 744 844 1972",
+  mail: "contact@arghyatrust.org",
+  website: "www.arghyatrust.org",
+};
+
 
   const languageOptions = [
     { value: "english", label: "English" },

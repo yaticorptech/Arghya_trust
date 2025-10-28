@@ -1,10 +1,10 @@
 import { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import logo from "../assets/images/logo white-bg.jpg"; 
-import hero1 from "../assets/images/1H.jpg";
-import hero2 from "../assets/images/2H.jpg";
-import hero3 from "../assets/images/3H.JPG";
-import hero4 from "../assets/images/4H.JPG";
+// import hero1 from "../assets/images/1H.jpg";
+// import hero2 from "../assets/images/2H.jpg";
+// import hero3 from "../assets/images/3H.JPG";
+// import hero4 from "../assets/images/4H.JPG";
 
 export default function Header() {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -14,8 +14,7 @@ export default function Header() {
   const [isHeaderVisible, setIsHeaderVisible] = useState(true);
   const lastScrollY = useRef(0);
 
-  const sliderImages = [hero1, hero2, hero4, hero3];
-
+const sliderImages = ["https://i.ibb.co/cSBjJZyK/1H.jpg", "https://i.ibb.co/XxXWCMjJ/2H.jpg", "https://i.ibb.co/cXtt8qWf/4H.jpg", "https://i.ibb.co/v65mT2RX/3H.jpg"];
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentSlide((prev) => (prev + 1) % sliderImages.length);

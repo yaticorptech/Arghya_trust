@@ -533,7 +533,6 @@ const About = () => {
             />
           </div>
         </div>
-        {/* Decorative accent bar */}
       </div>
 
       {/* Name & Role */}
