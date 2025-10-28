@@ -1,19 +1,19 @@
 import { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import logo3s from '../assets/images/logo3s.jpg';
-import meaning from '../assets/images/meaning.jpg';
-import logokan from '../assets/images/logokan.jpg';
-import founderImg from "../assets/images/founder.JPG";
-import work1 from "../assets/images/F1.jpg";
-import work2 from "../assets/images/F2.jpg";
-import work3 from "../assets/images/F3.jpg";
-import work4 from "../assets/images/F4.jpg";
-import work5 from "../assets/images/F5.jpg";
-import work6 from "../assets/images/F6.jpg";
-import T1 from "../assets/images/T1.jpg";
-import T2 from "../assets/images/T2.jpg";
-import T3 from "../assets/images/T3.jpg";
-import T4 from "../assets/images/T4.jpg";
+// import logo3s from '../assets/images/logo3s.jpg';
+// import meaning from '../assets/images/meaning.jpg';
+// import logokan from '../assets/images/logokan.jpg';
+// import founderImg from "../assets/images/founder.JPG";
+// import work1 from "../assets/images/F1.jpg";
+// import work2 from "../assets/images/F2.jpg";
+// import work3 from "../assets/images/F3.jpg";
+// import work4 from "../assets/images/F4.jpg";
+// import work5 from "../assets/images/F5.jpg";
+// import work6 from "../assets/images/F6.jpg";
+// import T1 from "../assets/images/T1.jpg";
+// import T2 from "../assets/images/T2.jpg";
+// import T3 from "../assets/images/T3.jpg";
+// import T4 from "../assets/images/T4.jpg";
 import OT from "../assets/images/OT.jpg";
 <motion.div
 
@@ -23,7 +23,7 @@ import OT from "../assets/images/OT.jpg";
   className="relative w-64 h-68 lg:w-76 lg:h-872 rounded-2xl overflow-hidden shadow-xl border-4 border-white/30 flex-shrink-0"
 >
   <img
-    src={founderImg}
+    src="https://i.ibb.co/qvTMrmK/founder.jpg"
     alt="Sri Ranjan Bellarpady"
     className="object-cover w-full h-full"
   />
@@ -259,17 +259,17 @@ const About = () => {
     {/* 3 Images in Single Line */}
     <div className="flex justify-center gap-8 flex-wrap">
       <img
-        src={logo3s}
+        src="https://i.ibb.co/fzGj1HXS/logo3s.jpg"
         alt="Arghya Trust Logo"
         className="w-96 md:w-[28rem] h-auto rounded-2xl shadow-lg border-4 border-white/20"
       />
       <img
-        src={logokan}
+        src="https://i.ibb.co/TBWqfMGG/Logokan.jpg"
         alt="Arghya Trust Kannada Logo"
         className="w-96 md:w-[28rem] h-auto rounded-2xl shadow-lg border-4 border-white/20"
       />
       <img
-        src={meaning}
+        src="https://i.ibb.co/0j4sP8Vz/meaning.jpg"
         alt="3S Philosophy"
         className="w-96 md:w-[28rem] h-auto rounded-2xl shadow-lg border-4 border-white/20"
       />
@@ -329,7 +329,7 @@ const About = () => {
         >
           <div className="overflow-hidden rounded-xl mb-4">
             <img
-              src={person.img}
+              src="https://i.ibb.co/r25tK9dG/T1.jpg,https://i.ibb.co/FbnGG6x1/T2.jpg,https://i.ibb.co/wF2njygL/T3.jpg,https://i.ibb.co/YTWm6WDJ/T4.jpg"
               alt={person.name}
               className="object-cover w-full h-60 rounded-xl hover:scale-105 transition-transform duration-500"
             />
@@ -397,7 +397,7 @@ const About = () => {
   className="relative w-full lg:w-80 rounded-2xl overflow-hidden shadow-xl border-4 border-white/30 flex-shrink-0 self-stretch"
 >
   <img
-    src={founderImg} // your JPG image
+    src="https://i.ibb.co/qvTMrmK/founder.jpg" // your JPG image
     alt="Sri Ranjan Bellarpady"
     className="object-cover w-full h-full min-h-[500px]"
   />
@@ -488,7 +488,7 @@ const About = () => {
           <a key={i} href={src} download className="block h-full">
             <div className="overflow-hidden rounded-xl shadow-lg border border-white/20 group relative w-full h-full min-h-[150px]">
               <img
-                src={src}
+                src="https://ibb.co/HpYySD9b,https://i.ibb.co/5W8M2wmW/F2.jpg,https://i.ibb.co/m5fHJYzt/F3.jpg,https://i.ibb.co/0vJzXLQ/F4.jpg,https://i.ibb.co/V0k4Zxv0/F5.jpg,https://i.ibb.co/DHpfgFyN/F6.jpg"
                 alt={`Work ${i + 1}`}
                 className="object-cover w-full h-full group-hover:scale-110 transition-transform duration-500"
               />
