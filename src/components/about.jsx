@@ -528,19 +528,18 @@ const About = () => {
           <div className="aspect-square flex justify-center items-center">
             <img
               src={OT}
-              alt="Mr. Arjun Rao"
+              alt="Mr. Shashidhar M"
               className="w-full h-full object-cover rounded-md transition-transform duration-500 hover:scale-105"
             />
           </div>
         </div>
         {/* Decorative accent bar */}
-        <div className="absolute -bottom-1 left-1/2 transform -translate-x-1/2 w-8 h-0.5 bg-gradient-to-r from-[#1a365d] to-[#2d5a4d] rounded-full"></div>
       </div>
 
       {/* Name & Role */}
       <div className="mb-3 text-center">
         <h4 className="text-base font-bold text-[#1a365d] mb-1">
-          Mr. Arjun Rao
+          Mr. Shashidhar M 
         </h4>
         <span className="inline-block px-2 py-1 text-xs font-semibold text-[#2d5a4d] bg-[#f0f7f4] rounded-md">
           Director
@@ -549,16 +548,17 @@ const About = () => {
 
       {/* Action Buttons */}
       <div className="flex justify-center items-center gap-2">
-        {/* Facebook Button */}
-        <a
-          href="https://facebook.com"
-          target="_blank"
-          rel="noopener noreferrer"
-          aria-label="Facebook profile"
-          className="flex items-center justify-center w-8 h-8 bg-[#1877F2] text-white rounded-md hover:bg-[#166FE5] hover:scale-110 transition-all duration-300 shadow-sm"
-        >
-          <i className="fab fa-facebook-f text-xs"></i>
-        </a>
+        {/* LinkedIn Button */}
+<a
+  href="https://www.linkedin.com"
+  target="_blank"
+  rel="noopener noreferrer"
+  aria-label="LinkedIn profile"
+  className="flex items-center justify-center w-8 h-8 bg-[#0077B5] text-white rounded-md hover:bg-[#006699] hover:scale-110 transition-all duration-300 shadow-sm"
+>
+  <i className="fab fa-linkedin-in text-xs"></i>
+</a>
+
 
         {/* View Bio Button */}
         <button
