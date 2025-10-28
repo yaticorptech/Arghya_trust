@@ -2,7 +2,7 @@ import { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import logo3s from '../assets/images/logo3s.jpg';
 import meaning from '../assets/images/meaning.jpg';
-import Logokan from '../assets/images/Logokan.jpg'
+import logokan from '../assets/images/logokan.jpg';
 import founderImg from "../assets/images/founder.JPG";
 import work1 from "../assets/images/F1.jpg";
 import work2 from "../assets/images/F2.jpg";
@@ -264,7 +264,7 @@ const About = () => {
         className="w-96 md:w-[28rem] h-auto rounded-2xl shadow-lg border-4 border-white/20"
       />
       <img
-        src={Logokan}
+        src={logokan}
         alt="Arghya Trust Kannada Logo"
         className="w-96 md:w-[28rem] h-auto rounded-2xl shadow-lg border-4 border-white/20"
       />
