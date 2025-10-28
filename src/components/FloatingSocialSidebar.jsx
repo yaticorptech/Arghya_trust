@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 
 const FloatingSocialSidebar = () => {
   const [hoveredIcon, setHoveredIcon] = useState(null);
-//noe 
+
   const socialLinks = [
     { name: 'WhatsApp', icon: 'fab fa-whatsapp', url: 'https://wa.me/917448441972', color: '#25D366' },
     { name: 'Facebook', icon: 'fab fa-facebook-f', url: 'https://facebook.com/arghyatrust', color: '#1877F2' },

@@ -78,9 +78,6 @@ const GallerySlider = () => {
             <h2 className="text-5xl md:text-6xl font-serif font-bold text-[#1a365d] mb-6">
               GALLERY
             </h2>
-            <p className="text-xl text-gray-700 max-w-3xl mx-auto leading-relaxed">
-              A glimpse into our journey of transformation, service, and spiritual growth
-            </p>
           </motion.div>
 
           {/* Main Slider Container */}
