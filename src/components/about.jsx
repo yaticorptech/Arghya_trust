@@ -14,7 +14,7 @@ import T1 from "../assets/images/T1.jpg";
 import T2 from "../assets/images/T2.jpg";
 import T3 from "../assets/images/T3.jpg";
 import T4 from "../assets/images/T4.jpg";
-
+import OT from "../assets/images/OT.jpg";
 <motion.div
 
   initial={{ opacity: 0, x: -50 }}
@@ -527,7 +527,7 @@ const About = () => {
         <div className="overflow-hidden rounded-md shadow-sm bg-gray-50">
           <div className="aspect-square flex justify-center items-center">
             <img
-              src={T1}
+              src={OT}
               alt="Mr. Arjun Rao"
               className="w-full h-full object-cover rounded-md transition-transform duration-500 hover:scale-105"
             />
