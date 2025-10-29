@@ -279,7 +279,7 @@ const About = () => {
 </motion.div>
 
 
-{/* OUR TEAM Section */}
+{/* Trustees Section */}
 <motion.section
   initial={{ opacity: 0, y: 50 }}
   whileInView={{ opacity: 1, y: 0 }}
@@ -287,18 +287,36 @@ const About = () => {
   className="mb-16"
 >
   <h3 className="text-4xl md:text-5xl font-serif font-bold text-[#1a365d] mb-10 drop-shadow-lg text-center">
-    OUR TEAM
+    TRUSTEES OF ARGHYA TRUST
   </h3>
 
-  {/* Container same as Trustees */}
+  {/* Container */}
   <div className="bg-[#DBDBDB] rounded-3xl p-8 lg:p-10 shadow-2xl border border-white/20">
     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 justify-items-center">
       {[
         {
-          name: "Mr. Shashidhar M",
-          role: "Director",
-          img: "https://i.ibb.co/1fPg7kZt/OT.jpg",
-          linkedin: "https://www.linkedin.com",
+          name: "Sri Ranjan Bellarpady",
+          role: "Managing Trustee",
+          img: "https://i.ibb.co/r25tK9dG/T1.jpg",
+          fb: "https://www.facebook.com/ranjanbellarpady",
+        },
+        {
+          name: "Mr. Bellala Gopinath Rao",
+          role: "Trustee",
+          img: "https://i.ibb.co/FbnGG6x1/T2.jpg",
+          fb: "https://www.facebook.com/bellalagopinath.rao",
+        },
+        {
+          name: "Mr. Dilraj Alva",
+          role: "Trustee",
+          img: "https://i.ibb.co/wF2njygL/T3.jpg",
+          fb: "https://www.facebook.com/dilraj.alva",
+        },
+        {
+          name: "Mr. Vinay P M",
+          role: "Trustee",
+          img: "https://i.ibb.co/YTWm6WDJ/T4.jpg",
+          fb: "https://www.facebook.com/vinay.pm.3/",
         },
       ].map((person, i) => (
         <motion.div
@@ -323,26 +341,26 @@ const About = () => {
             {person.role}
           </p>
 
-          {/* LinkedIn Icon and Bio Button */}
-          <div className="flex justify-center items-center gap-3 mt-3">
-            {/* LinkedIn Icon */}
-            <a
-              href={person.linkedin}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex justify-center items-center w-10 h-10 bg-[#0077B5]/10 rounded-lg hover:bg-[#0077B5]/20 transition-transform hover:scale-105"
-            >
-              <i className="fab fa-linkedin-in text-[#0077B5] text-lg"></i>
-            </a>
+        {/* Social Icons and Bio Button */}
+<div className="flex justify-center items-center gap-3 mt-3">
+  {/* Facebook Icon */}
+  <a
+    href={person.fb}
+    target="_blank"
+    rel="noopener noreferrer"
+    className="flex justify-center items-center w-10 h-10 bg-[#1877F2]/10 rounded-lg hover:bg-[#1877F2]/20 transition-transform hover:scale-105"
+  >
+    <i className="fab fa-facebook-f text-[#1877F2] text-lg"></i>
+  </a>
 
-            {/* View Bio Button */}
-            <button
-              onClick={() => console.log(`View ${person.name} bio`)}
-              className="flex justify-center items-center w-24 h-10 bg-[#1a365d] text-white rounded-lg hover:bg-[#2d5a4d] transition-colors duration-300 font-medium text-sm"
-            >
-              View Bio
-            </button>
-          </div>
+  {/* View Bio Button */}
+  <button
+    onClick={() => console.log(`View ${person.name} bio`)}
+    className="flex justify-center items-center w-24 h-10 bg-[#1a365d] text-white rounded-lg hover:bg-[#2d5a4d] transition-colors duration-300 font-medium text-sm"
+  >
+    View Bio
+  </button>
+</div>
         </motion.div>
       ))}
     </div>
@@ -489,70 +507,71 @@ const About = () => {
   initial={{ opacity: 0, y: 50 }}
   whileInView={{ opacity: 1, y: 0 }}
   viewport={{ once: true }}
-  className="mb-16 px-4"
+  className="mb-16"
 >
-  <h3 className="text-2xl md:text-3xl font-serif font-bold text-[#1a365d] mb-10 text-center">
+  <h3 className="text-4xl md:text-5xl font-serif font-bold text-[#1a365d] mb-10 drop-shadow-lg text-center">
     OUR TEAM
   </h3>
 
-  {/* Square Container */}
-  <div className="max-w-xs mx-auto">
-    <motion.div
-      initial={{ opacity: 0, scale: 0.95 }}
-      whileInView={{ opacity: 1, scale: 1 }}
-      viewport={{ once: true }}
-      transition={{ duration: 0.5, ease: "easeOut" }}
-      className="bg-white rounded-lg p-4 shadow-lg border border-gray-100 hover:shadow-xl hover:-translate-y-1 transition-all duration-300"
-    >
-      {/* Square Profile Image */}
-      <div className="relative mb-3">
-        <div className="overflow-hidden rounded-md shadow-sm bg-gray-50">
-          <div className="aspect-square flex justify-center items-center">
+  {/* Container same as Trustees */}
+  <div className="bg-[#DBDBDB] rounded-3xl p-8 lg:p-10 shadow-2xl border border-white/20">
+    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 justify-items-center">
+      {[
+        {
+          name: "Mr. Shashidhar M",
+          role: "Director",
+          img: "https://i.ibb.co/1fPg7kZt/OT.jpg",
+          linkedin: "https://www.linkedin.com",
+        },
+      ].map((person, i) => (
+        <motion.div
+          key={i}
+          initial={{ opacity: 0, scale: 0.9 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5, delay: i * 0.2 }}
+          className="bg-white rounded-2xl p-4 w-64 text-center shadow-lg border border-white/20 hover:shadow-2xl hover:-translate-y-2 transition-all duration-300"
+        >
+          <div className="overflow-hidden rounded-xl mb-4">
             <img
-              src="https://i.ibb.co/1fPg7kZt/OT.jpg"
-              alt="Mr. Shashidhar M"
-              className="w-full h-full object-cover rounded-md transition-transform duration-500 hover:scale-105"
+              src={person.img}
+              alt={person.name}
+              className="object-cover w-full h-60 rounded-xl hover:scale-105 transition-transform duration-500"
             />
           </div>
-        </div>
-      </div>
+          <h4 className="text-lg font-semibold text-[#1a365d]">
+            {person.name}
+          </h4>
+          <p className="text-sm text-[#2d5a4d] font-medium mb-4">
+            {person.role}
+          </p>
 
-      {/* Name & Role */}
-      <div className="mb-3 text-center">
-        <h4 className="text-base font-bold text-[#1a365d] mb-1">
-          Mr. Shashidhar M 
-        </h4>
-        <span className="inline-block px-2 py-1 text-xs font-semibold text-[#2d5a4d] bg-[#f0f7f4] rounded-md">
-          Director
-        </span>
-      </div>
+          {/* LinkedIn Icon and Bio Button */}
+          <div className="flex justify-center items-center gap-3 mt-3">
+            {/* LinkedIn Icon */}
+            <a
+              href={person.linkedin}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex justify-center items-center w-10 h-10 bg-[#0077B5]/10 rounded-lg hover:bg-[#0077B5]/20 transition-transform hover:scale-105"
+            >
+              <i className="fab fa-linkedin-in text-[#0077B5] text-lg"></i>
+            </a>
 
-      {/* Action Buttons */}
-      <div className="flex justify-center items-center gap-2">
-        {/* LinkedIn Button */}
-<a
-  href="https://www.linkedin.com"
-  target="_blank"
-  rel="noopener noreferrer"
-  aria-label="LinkedIn profile"
-  className="flex items-center justify-center w-8 h-8 bg-[#0077B5] text-white rounded-md hover:bg-[#006699] hover:scale-110 transition-all duration-300 shadow-sm"
->
-  <i className="fab fa-linkedin-in text-xs"></i>
-</a>
-
-
-        {/* View Bio Button */}
-        <button
-          onClick={() => console.log('View Arjun Rao bio')}
-          aria-label="View biography"
-          className="flex items-center justify-center w-20 h-8 bg-gradient-to-r from-[#1a365d] to-[#2d5a4d] text-white rounded-md hover:from-[#2d5a4d] hover:to-[#1a365d] hover:scale-105 transition-all duration-300 font-medium text-xs shadow-sm"
-        >
-          View Bio
-        </button>
-      </div>
-    </motion.div>
+            {/* View Bio Button */}
+            <button
+              onClick={() => console.log(`View ${person.name} bio`)}
+              className="flex justify-center items-center w-24 h-10 bg-[#1a365d] text-white rounded-lg hover:bg-[#2d5a4d] transition-colors duration-300 font-medium text-sm"
+            >
+              View Bio
+            </button>
+          </div>
+        </motion.div>
+      ))}
+    </div>
   </div>
 </motion.section>
+
 
     {/* Impact Section */}
 <motion.div
