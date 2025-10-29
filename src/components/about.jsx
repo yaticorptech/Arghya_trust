@@ -279,7 +279,7 @@ const About = () => {
 </motion.div>
 
 
-{/* Trustees Section */}
+{/* OUR TEAM Section */}
 <motion.section
   initial={{ opacity: 0, y: 50 }}
   whileInView={{ opacity: 1, y: 0 }}
@@ -287,36 +287,18 @@ const About = () => {
   className="mb-16"
 >
   <h3 className="text-4xl md:text-5xl font-serif font-bold text-[#1a365d] mb-10 drop-shadow-lg text-center">
-    TRUSTEES OF ARGHYA TRUST
+    OUR TEAM
   </h3>
 
-  {/* Container */}
+  {/* Container same as Trustees */}
   <div className="bg-[#DBDBDB] rounded-3xl p-8 lg:p-10 shadow-2xl border border-white/20">
     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 justify-items-center">
       {[
         {
-          name: "Sri Ranjan Bellarpady",
-          role: "Managing Trustee",
-          img: "https://i.ibb.co/r25tK9dG/T1.jpg",
-          fb: "https://www.facebook.com/ranjanbellarpady",
-        },
-        {
-          name: "Mr. Bellala Gopinath Rao",
-          role: "Trustee",
-          img: "https://i.ibb.co/FbnGG6x1/T2.jpg",
-          fb: "https://www.facebook.com/bellalagopinath.rao",
-        },
-        {
-          name: "Mr. Dilraj Alva",
-          role: "Trustee",
-          img: "https://i.ibb.co/wF2njygL/T3.jpg",
-          fb: "https://www.facebook.com/dilraj.alva",
-        },
-        {
-          name: "Mr. Vinay P M",
-          role: "Trustee",
-          img: "https://i.ibb.co/YTWm6WDJ/T4.jpg",
-          fb: "https://www.facebook.com/vinay.pm.3/",
+          name: "Mr. Shashidhar M",
+          role: "Director",
+          img: "https://i.ibb.co/1fPg7kZt/OT.jpg",
+          linkedin: "https://www.linkedin.com",
         },
       ].map((person, i) => (
         <motion.div
@@ -341,26 +323,26 @@ const About = () => {
             {person.role}
           </p>
 
-        {/* Social Icons and Bio Button */}
-<div className="flex justify-center items-center gap-3 mt-3">
-  {/* Facebook Icon */}
-  <a
-    href={person.fb}
-    target="_blank"
-    rel="noopener noreferrer"
-    className="flex justify-center items-center w-10 h-10 bg-[#1877F2]/10 rounded-lg hover:bg-[#1877F2]/20 transition-transform hover:scale-105"
-  >
-    <i className="fab fa-facebook-f text-[#1877F2] text-lg"></i>
-  </a>
+          {/* LinkedIn Icon and Bio Button */}
+          <div className="flex justify-center items-center gap-3 mt-3">
+            {/* LinkedIn Icon */}
+            <a
+              href={person.linkedin}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex justify-center items-center w-10 h-10 bg-[#0077B5]/10 rounded-lg hover:bg-[#0077B5]/20 transition-transform hover:scale-105"
+            >
+              <i className="fab fa-linkedin-in text-[#0077B5] text-lg"></i>
+            </a>
 
-  {/* View Bio Button */}
-  <button
-    onClick={() => console.log(`View ${person.name} bio`)}
-    className="flex justify-center items-center w-24 h-10 bg-[#1a365d] text-white rounded-lg hover:bg-[#2d5a4d] transition-colors duration-300 font-medium text-sm"
-  >
-    View Bio
-  </button>
-</div>
+            {/* View Bio Button */}
+            <button
+              onClick={() => console.log(`View ${person.name} bio`)}
+              className="flex justify-center items-center w-24 h-10 bg-[#1a365d] text-white rounded-lg hover:bg-[#2d5a4d] transition-colors duration-300 font-medium text-sm"
+            >
+              View Bio
+            </button>
+          </div>
         </motion.div>
       ))}
     </div>
