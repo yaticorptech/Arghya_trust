@@ -1,12 +1,12 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
-import O1 from "../assets/images/1O.jpg";
-import O2 from "../assets/images/2O.jpeg";
-import O3 from "../assets/images/3O.JPG";
-import U1 from "../assets/images/1U.jpg";
-import U2 from "../assets/images/2U.jpg";
-import U3 from "../assets/images/3U.jpg";
-import devi from "../assets/images/devii.jpg";
+// import O1 from "../assets/images/1O.jpg";
+// import O2 from "../assets/images/2O.jpeg";
+// import O3 from "../assets/images/3O.JPG";
+// import U1 from "../assets/images/1U.jpg";
+// import U2 from "../assets/images/2U.jpg";
+// import U3 from "../assets/images/3U.jpg";
+// import devi from "../assets/images/devii.jpg";
 
 const Activities = () => {
   const [activeCard, setActiveCard] = useState(null);
@@ -16,19 +16,19 @@ const Activities = () => {
       id: 1,
       title: "Swacch Manas",
       description: `An after-school program blending civic awareness, cleanliness, life skills, soft skills, and career counseling for holistic child development. In Mangaluru in association with Ramakrishna Mission Swacch Mangaluru Abhiyan.`,
-      image: O1,
+      image: "https://i.ibb.co/4w9WBWKP/1O.jpg",
     },
     {
       id: 2,
       title: "Be & Make\n(Youth Workshop)",
       description: `In association with Mangalore University Swami Vivekananda Study Centre, this program equips youth with personality development, leadership, financial literacy, industry-based training, and nation-building spirit. It also functions as an after-college program.`,
-      image: O2,
+      image: "https://i.ibb.co/90M0dGj/2O.jpg",
     },
     {
       id: 3,
       title: "Sustainability Circles",
       description: `Sustainability Circles in schools and colleges inspire and empower youth to adopt eco-sensitive living. Through interactive sessions on waste management, cleanliness, and green practices, students learn to become responsible citizens and environmental stewards, fostering a culture of sustainability and collective action for a cleaner, greener future.`,
-      image: O3,
+      image: "https://i.ibb.co/8DrsvmF2/3O.jpg",
     },
   ];
 
@@ -37,19 +37,19 @@ const Activities = () => {
       id: 4,
       title: "Swachha Biligiri\n(BR Hills Cleanliness Campaign)",
       description: `This initiative of the Trust in association with VGKK and Karuna Trust promotes holistic cleanliness and sustainability in the Biligiri Rangan Hills. The program integrates regular waste collection, segregation, and processing with community empowerment. Through a dedicated livelihood centre, Soliga tribal communities create sustainable products, combining environmental conservation with economic self-reliance, making Swachha Biligiri a model for eco-living and inclusive rural development.`,
-      image: U1,
+      image: "https://i.ibb.co/rGqnJ6VT/1U.jpg",
     },
     {
       id: 5,
       title: "Mandira Uttana Yojana (Temple Rejuvenation Program)",
       description: `It is dedicated to restoring the sanctity of temples and sacred spaces through cleanliness, preservation, and proper disposal of religious materials with reverence. The program also conducts spiritual awareness sessions and value-based classes for children and youth, nurturing devotion and discipline. By supporting temples with modern technology, training, and resources, the initiative promotes both cultural continuity and community participation in spiritual rejuvenation.`,
-      image: U2,
+      image: "https://i.ibb.co/HLw5rggp/2U.jpg",
     },
     {
       id: 6,
       title: "Residential School (Integrated Education Model)",
       description: `A visionary initiative by Arghya Trust, the Residential School aims to offer holistic education integrating seven domains of excellence — Physical, Psychological, Emotional, Intellectual, and Spiritual, along with Self-Reliance and Contributory Personality. This model prepares children for life with inner strength, clarity, and compassion. Through experiential learning, value-based education, and community engagement, the school seeks to nurture balanced individuals capable of excellence, leadership, and purposeful living in harmony with society and nature.`,
-      image: U3,
+      image: "https://i.ibb.co/v4FX57rM/3U.jpg",
     },
   ];
 
@@ -157,7 +157,7 @@ const Activities = () => {
               {/* Left - Image */}
               <div className="flex justify-center">
                 <img
-                  src={devi}
+                  src="https://i.ibb.co/jCFSNNp/devii.jpg"
                   alt="Devi"
                   className="rounded-3xl shadow-xl w-[85%] h-auto object-cover border border-white/50 hover:scale-105 transition-transform duration-700"
                 />

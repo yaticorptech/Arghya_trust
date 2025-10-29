@@ -1,7 +1,6 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import bg from "../assets/images/back.jpg";
-
+// import bg from "../assets/images/back.jpg";
 // Add your gallery images - replace these with your actual images
 // import gallery1 from "../assets/images/1H.jpg";
 // import gallery2 from "../assets/images/2H.jpg";
@@ -58,7 +57,7 @@ const GallerySlider = () => {
       {/* Same background image as App.js */}
       <div className="fixed inset-0 -z-20">
         <img
-          src={bg}
+          src="https://i.ibb.co/PZZx6jPw/back.jpg"
           alt="background"
           className="w-full h-full object-cover"
         />

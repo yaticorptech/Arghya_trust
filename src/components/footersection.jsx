@@ -2,10 +2,10 @@ import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
 // Replace these imports with your actual image paths
-import qrCode from "../assets/images/qr.jpg";
-import join1 from "../assets/images/join1.jpg";
-import join2 from "../assets/images/join2.jpg";
-import join3 from "../assets/images/join3.jpeg";
+// import qrCode from "../assets/images/qr.jpg";
+// import join1 from "../assets/images/join1.jpg";
+// import join2 from "../assets/images/join2.jpg";
+// import join3 from "../assets/images/join3.jpeg";
 
 const FooterBox = ({ children, className = "" }) => {
   return (
@@ -38,17 +38,17 @@ const FooterSection = () => {
 
   const journeyCards = [
     {
-      img: join1,
+      img: "https://i.ibb.co/DHZJKQwg/join1.jpg",
       title: "Volunteer",
       desc: "Volunteer with our programs",
     },
     {
-      img: join2,
+      img: "https://i.ibb.co/FqcPg1Jy/join2.jpg",
       title: "Support",
       desc: "Support education and sustainability projects",
     },
     {
-      img: join3,
+      img: "https://i.ibb.co/PZc3VbqT/join3.jpg",
       title: "Collaborate",
       desc: "Collaborate for spiritual and cultural initiatives",
     },
@@ -277,7 +277,7 @@ Mandya, KA - 571438`,
 
               <div className="flex justify-center mb-6">
                 <div className="w-32 h-32 bg-gray-50 rounded-xl p-3 flex items-center justify-center shadow-md border border-gray-200">
-                  <img src={qrCode} alt="QR code" className="w-full h-full object-contain rounded" />
+                  <img src="https://i.ibb.co/Ndh7Zq2B/qr.jpg" alt="QR code" className="w-full h-full object-contain rounded" />
                 </div>
               </div>
 

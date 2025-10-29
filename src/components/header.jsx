@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import logo from "../assets/images/logo white-bg.jpg"; 
+// import logo from "../assets/images/logo white-bg.jpg"; 
 // import hero1 from "../assets/images/1H.jpg";
 // import hero2 from "../assets/images/2H.jpg";
 // import hero3 from "../assets/images/3H.JPG";
@@ -109,7 +109,7 @@ const sliderImages = ["https://i.ibb.co/cSBjJZyK/1H.jpg", "https://i.ibb.co/XxXW
           >
             <div className="relative w-23 h-20">
               <img
-                src={logo}
+                src="https://i.ibb.co/fzGj1HXS/logo3s.jpg"
                 alt="Arghya Logo"
                 className="w-full h-full object-contain transition-transform duration-800 group-hover:scale-105"
               />

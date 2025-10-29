@@ -12,7 +12,7 @@ function App() {
       {/* Fixed background without overlay */}
       <div className="fixed inset-0 -z-20">
         <img
-          src={bg}
+          src="https://i.ibb.co/PZZx6jPw/back.jpg"
           alt="background"
           className="w-full h-full object-cover"
         />
