@@ -109,7 +109,7 @@ const sliderImages = ["https://i.ibb.co/cSBjJZyK/1H.jpg", "https://i.ibb.co/XxXW
           >
             <div className="relative w-23 h-20">
               <img
-                src="https://i.ibb.co/JjY4RDyZ/image-removebg-preview.png"
+                src="https://i.ibb.co/fzGj1HXS/logo3s.jpg"
                 alt="Arghya Logo"
                 className="w-full h-full object-contain transition-transform duration-800 group-hover:scale-105"
               />
