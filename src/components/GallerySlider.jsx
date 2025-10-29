@@ -1,13 +1,5 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-// import bg from "../assets/images/back.jpg";
-// Add your gallery images - replace these with your actual images
-// import gallery1 from "../assets/images/1H.jpg";
-// import gallery2 from "../assets/images/2H.jpg";
-// import gallery3 from "../assets/images/3H.JPG";
-// import gallery4 from "../assets/images/4H.JPG";
-// import gallery5 from "../assets/images/1O.jpg";
-// import gallery6 from "../assets/images/3O.JPG";
 
 const GallerySlider = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -52,9 +44,8 @@ const GallerySlider = () => {
   };
 
   return (
-        <section className="relative min-h-screen pt-2 pb-12 overflow-hidden">
-
-      {/* Same background image as App.js */}
+    <section className="relative min-h-screen pt-8 pb-16 overflow-hidden">
+      {/* Background */}
       <div className="fixed inset-0 -z-20">
         <img
           src="https://i.ibb.co/PZZx6jPw/back.jpg"
@@ -65,28 +56,28 @@ const GallerySlider = () => {
 
       {/* Content */}
       <div className="relative z-10">
-        <div className="max-w-6xl mx-auto px-6">
-          {/* Section Header */}
+        <div className="max-w-6xl mx-auto px-4 sm:px-6">
+          {/* Header */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="text-center mb-16"
+            className="text-center mb-12"
           >
-            <h2 className="text-5xl md:text-6xl font-serif font-bold text-[#1a365d] mb-6">
+            <h2 className="text-4xl sm:text-5xl md:text-6xl font-serif font-bold text-[#1a365d] mb-6">
               GALLERY
             </h2>
           </motion.div>
 
-          {/* Main Slider Container */}
-          <div 
+          {/* Slider */}
+          <div
             className="relative"
             onMouseEnter={() => setIsAutoPlaying(false)}
             onMouseLeave={() => setIsAutoPlaying(true)}
           >
-            {/* Simple 3-Grid Layout */}
-            <div className="relative h-[500px]">
+            {/* Image grid */}
+            <div className="relative h-[400px] sm:h-[450px] md:h-[500px]">
               <AnimatePresence mode="wait">
                 <motion.div
                   key={currentSlide}
@@ -94,79 +85,76 @@ const GallerySlider = () => {
                   animate={{ opacity: 1 }}
                   exit={{ opacity: 0 }}
                   transition={{ duration: 0.7, ease: "easeInOut" }}
-                  className="grid grid-cols-3 gap-6 h-full"
+                  className="
+                    grid 
+                    grid-cols-1 
+                    sm:grid-cols-2 
+                    md:grid-cols-3 
+                    gap-4 
+                    h-full
+                  "
                 >
-                  {/* Left Image */}
-                  <motion.div
-                    initial={{ opacity: 0, x: -50 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    transition={{ delay: 0.1, duration: 0.6 }}
-                    className="relative group h-full"
-                  >
-                    <img
-                      src={imageSets[currentSlide][0]?.src}
-                      alt="Gallery left"
-                      className="w-full h-full object-cover rounded-2xl shadow-xl transform group-hover:scale-105 transition-transform duration-500"
-                    />
-                    <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-all duration-300 rounded-2xl" />
-                  </motion.div>
-
-                  {/* Center Image */}
-                  <motion.div
-                    initial={{ opacity: 0, y: 50 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ delay: 0.2, duration: 0.6 }}
-                    className="relative group h-full"
-                  >
-                    <img
-                      src={imageSets[currentSlide][1]?.src}
-                      alt="Gallery center"
-                      className="w-full h-full object-cover rounded-2xl shadow-xl transform group-hover:scale-105 transition-transform duration-500"
-                    />
-                    <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-all duration-300 rounded-2xl" />
-                  </motion.div>
-
-                  {/* Right Image */}
-                  <motion.div
-                    initial={{ opacity: 0, x: 50 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    transition={{ delay: 0.3, duration: 0.6 }}
-                    className="relative group h-full"
-                  >
-                    <img
-                      src={imageSets[currentSlide][2]?.src}
-                      alt="Gallery right"
-                      className="w-full h-full object-cover rounded-2xl shadow-xl transform group-hover:scale-105 transition-transform duration-500"
-                    />
-                    <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-all duration-300 rounded-2xl" />
-                  </motion.div>
+                  {imageSets[currentSlide].map((image, index) => (
+                    <motion.div
+                      key={index}
+                      initial={{ opacity: 0, y: 40 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{ delay: 0.1 * index, duration: 0.6 }}
+                      className="relative group h-[250px] sm:h-full"
+                    >
+                      <img
+                        src={image.src}
+                        alt={`Gallery ${index}`}
+                        className="w-full h-full object-cover rounded-2xl shadow-xl transform group-hover:scale-105 transition-transform duration-500"
+                      />
+                      <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-all duration-300 rounded-2xl" />
+                    </motion.div>
+                  ))}
                 </motion.div>
               </AnimatePresence>
 
               {/* Navigation Arrows */}
               <button
                 onClick={prevSlide}
-                className="absolute -left-6 top-1/2 transform -translate-y-1/2 w-12 h-12 bg-white/90 hover:bg-white rounded-full flex items-center justify-center text-gray-800 transition-all duration-300 hover:scale-110 shadow-xl z-10"
-                aria-label="Previous slide"
+                className="absolute left-2 sm:-left-6 top-1/2 transform -translate-y-1/2 w-10 sm:w-12 h-10 sm:h-12 bg-white/90 hover:bg-white rounded-full flex items-center justify-center text-gray-800 transition-all duration-300 hover:scale-110 shadow-lg z-10"
               >
-                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+                <svg
+                  className="w-5 h-5 sm:w-6 sm:h-6"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M15 19l-7-7 7-7"
+                  />
                 </svg>
               </button>
 
               <button
                 onClick={nextSlide}
-                className="absolute -right-6 top-1/2 transform -translate-y-1/2 w-12 h-12 bg-white/90 hover:bg-white rounded-full flex items-center justify-center text-gray-800 transition-all duration-300 hover:scale-110 shadow-xl z-10"
-                aria-label="Next slide"
+                className="absolute right-2 sm:-right-6 top-1/2 transform -translate-y-1/2 w-10 sm:w-12 h-10 sm:h-12 bg-white/90 hover:bg-white rounded-full flex items-center justify-center text-gray-800 transition-all duration-300 hover:scale-110 shadow-lg z-10"
               >
-                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                <svg
+                  className="w-5 h-5 sm:w-6 sm:h-6"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M9 5l7 7-7 7"
+                  />
                 </svg>
               </button>
             </div>
 
-            {/* Simple Dot Navigation */}
-            <div className="flex justify-center mt-8 space-x-3">
+            {/* Dots */}
+            <div className="flex justify-center mt-6 space-x-2 sm:space-x-3">
               {imageSets.map((_, index) => (
                 <button
                   key={index}
@@ -176,16 +164,13 @@ const GallerySlider = () => {
                       ? "bg-blue-600 w-8"
                       : "bg-gray-300 hover:bg-gray-400"
                   }`}
-                  aria-label={`Go to slide ${index + 1}`}
                 />
               ))}
             </div>
 
-            {/* Simple Slide Counter */}
-            <div className="text-center mt-4">
-              <span className="text-gray-600 font-medium">
-                {currentSlide + 1} / {imageSets.length}
-              </span>
+            {/* Counter */}
+            <div className="text-center mt-4 text-gray-600 text-sm sm:text-base font-medium">
+              {currentSlide + 1} / {imageSets.length}
             </div>
           </div>
         </div>
