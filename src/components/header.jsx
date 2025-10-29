@@ -10,10 +10,10 @@ export default function Header() {
   const lastScrollY = useRef(0);
 
   const sliderImages = [
-    "https://i.ibb.co/cSBjJZyK/1H.jpg", 
-    "https://i.ibb.co/XxXWCMjJ/2H.jpg", 
-    "https://i.ibb.co/cXtt8qWf/4H.jpg", 
-    "https://i.ibb.co/v65mT2RX/3H.jpg"
+    "https://i.ibb.co/cSBjJZyK/1H.jpg",
+    "https://i.ibb.co/XxXWCMjJ/2H.jpg",
+    "https://i.ibb.co/cXtt8qWf/4H.jpg",
+    "https://i.ibb.co/v65mT2RX/3H.jpg",
   ];
 
   useEffect(() => {
@@ -23,30 +23,23 @@ export default function Header() {
     return () => clearInterval(interval);
   }, [sliderImages.length]);
 
-  // Scroll handler for header hide/show and background change
   useEffect(() => {
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
-      
-      // Update scrolled state for background change
       setScrolled(currentScrollY > 50);
-      
-      // Header hide/show logic
+
       if (currentScrollY > lastScrollY.current && currentScrollY > 100) {
-        // Scrolling down - hide header
         setIsHeaderVisible(false);
       } else {
-        // Scrolling up - show header
         setIsHeaderVisible(true);
       }
-      
       lastScrollY.current = currentScrollY;
     };
 
     window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
-  
+
   const navItems = [
     { id: "about", label: "About Us", hasDropdown: true },
     { id: "activities", label: "Activities" },
@@ -67,18 +60,12 @@ export default function Header() {
   const handleDropdownItemClick = (sectionId) => {
     setIsAboutDropdownOpen(false);
     setIsMenuOpen(false);
-    
-    // Scroll to the specific section
     const element = document.getElementById(sectionId);
     if (element) {
-      const headerHeight = 80; // Adjust based on your header height
+      const headerHeight = 80;
       const elementPosition = element.getBoundingClientRect().top;
       const offsetPosition = elementPosition + window.pageYOffset - headerHeight;
-
-      window.scrollTo({
-        top: offsetPosition,
-        behavior: "smooth"
-      });
+      window.scrollTo({ top: offsetPosition, behavior: "smooth" });
     }
   };
 
@@ -87,9 +74,7 @@ export default function Header() {
       {/* HEADER */}
       <motion.header
         initial={{ y: 0 }}
-        animate={{ 
-          y: isHeaderVisible ? 0 : -100,
-        }}
+        animate={{ y: isHeaderVisible ? 0 : -100 }}
         transition={{ duration: 0.3, ease: "easeInOut" }}
         className={`fixed top-0 w-full z-50 transition-all duration-300 ${
           scrolled
@@ -122,7 +107,6 @@ export default function Header() {
             {navItems.map((item) => (
               <div key={item.id} className="relative">
                 {item.hasDropdown ? (
-                  /* About Us with Dropdown */
                   <div className="relative">
                     <motion.button
                       onClick={(e) => handleAboutClick(e, item)}
@@ -142,7 +126,6 @@ export default function Header() {
                         }`}
                         layoutId="navHover"
                       />
-                      {/* Dropdown Arrow */}
                       <motion.span
                         animate={{ rotate: isAboutDropdownOpen ? 180 : 0 }}
                         className="ml-2 inline-block transition-transform"
@@ -151,7 +134,6 @@ export default function Header() {
                       </motion.span>
                     </motion.button>
 
-                    {/* Dropdown Menu */}
                     <AnimatePresence>
                       {isAboutDropdownOpen && (
                         <motion.div
@@ -162,41 +144,38 @@ export default function Header() {
                           className="absolute top-full left-0 mt-2 w-64 bg-white/95 backdrop-blur-xl rounded-2xl shadow-2xl border border-white/20 overflow-hidden"
                         >
                           <div className="p-2">
-                            <div className="p-2">
-                              <button
-                                onClick={() => handleDropdownItemClick("about-us")}
-                                className="w-full text-left px-4 py-3 text-[#1a365d] hover:bg-[#f5deb3]/20 rounded-lg transition-colors duration-300 font-medium"
-                              >
-                                About Us
-                              </button>
-                              <button
-                                onClick={() => handleDropdownItemClick("founder")}
-                                className="w-full text-left px-4 py-3 text-[#1a365d] hover:bg-[#f5deb3]/20 rounded-lg transition-colors duration-300 font-medium"
-                              >
-                                Sri Ranjan Bellarpady
-                              </button>
-                            </div>
+                            <button
+                              onClick={() => handleDropdownItemClick("about-us")}
+                              className="w-full text-left px-4 py-3 text-[#1a365d] hover:bg-[#f5deb3]/20 rounded-lg transition-colors duration-300 font-medium"
+                            >
+                              About Us
+                            </button>
+                            <button
+                              onClick={() => handleDropdownItemClick("founder")}
+                              className="w-full text-left px-4 py-3 text-[#1a365d] hover:bg-[#f5deb3]/20 rounded-lg transition-colors duration-300 font-medium"
+                            >
+                              Sri Ranjan Bellarpady
+                            </button>
                           </div>
                         </motion.div>
                       )}
                     </AnimatePresence>
                   </div>
                 ) : (
-                  /* Regular Nav Items */
-                 <motion.a
-  href={`#${item.id}`}
-  whileHover={{ y: -2 }}
-  onClick={() => {
-    setIsAboutDropdownOpen(false); // closes About Us dropdown
-    setIsMenuOpen(false); // closes mobile menu if open
-  }}
-  className={`relative px-5 py-2.5 font-medium text-sm tracking-wider transition-all duration-300 rounded-full group ${
-    scrolled
-      ? "text-[#1a365d] hover:text-[#dc2626]"
-      : "text-white/90 hover:text-[#f5deb3]"
-  }`}
->
-  {item.label}
+                  <motion.a
+                    href={`#${item.id}`}
+                    whileHover={{ y: -2 }}
+                    onClick={() => {
+                      setIsAboutDropdownOpen(false);
+                      setIsMenuOpen(false);
+                    }}
+                    className={`relative px-5 py-2.5 font-medium text-sm tracking-wider transition-all duration-300 rounded-full group ${
+                      scrolled
+                        ? "text-[#1a365d] hover:text-[#dc2626]"
+                        : "text-white/90 hover:text-[#f5deb3]"
+                    }`}
+                  >
+                    {item.label}
                     <motion.span
                       className={`absolute inset-0 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300 ${
                         scrolled
@@ -211,7 +190,7 @@ export default function Header() {
             ))}
           </nav>
 
-          {/* Mobile Menu */}
+          {/* Mobile Menu Button */}
           <button
             className="md:hidden relative w-10 h-10 flex items-center justify-center"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
@@ -248,7 +227,6 @@ export default function Header() {
               {navItems.map((item) => (
                 <div key={item.id}>
                   {item.hasDropdown ? (
-                    /* Mobile About Us with Dropdown */
                     <div>
                       <button
                         onClick={(e) => handleAboutClick(e, item)}
@@ -262,8 +240,7 @@ export default function Header() {
                           ▼
                         </motion.span>
                       </button>
-                      
-                      {/* Mobile Dropdown Items */}
+
                       <AnimatePresence>
                         {isAboutDropdownOpen && (
                           <motion.div
@@ -289,16 +266,15 @@ export default function Header() {
                       </AnimatePresence>
                     </div>
                   ) : (
-                    /* Regular Mobile Nav Items */
                     <motion.a
                       href={`#${item.id}`}
                       initial={{ x: -20, opacity: 0 }}
                       animate={{ x: 0, opacity: 1 }}
                       className="flex items-center gap-3 px-6 py-4 text-[#1a365d] hover:bg-[#f5deb3]/20 transition-colors border-b border-[#f5deb3]/20 last:border-0"
-                       onClick={() => {
-    setIsMenuOpen(false);
-    setIsAboutDropdownOpen(false);
-  }}
+                      onClick={() => {
+                        setIsMenuOpen(false);
+                        setIsAboutDropdownOpen(false);
+                      }}
                     >
                       <span className="font-medium">{item.label}</span>
                     </motion.a>
@@ -310,127 +286,119 @@ export default function Header() {
         </AnimatePresence>
       </motion.header>
 
-    {/* HERO SECTION */}
-<section className="relative h-screen w-full flex items-center justify-center overflow-hidden">
-  {/* Background Slider */}
-  <div className="absolute inset-0">
-    {sliderImages.map((image, index) => (
-      <motion.div
-        key={index}
-        className="absolute inset-0"
-        animate={{
-          opacity: currentSlide === index ? 1 : 0,
-          scale: currentSlide === index ? 1 : 1.05,
-        }}
-        transition={{ duration: 2 }}
-      >
-        <img
-          src={image}
-          alt={`Hero ${index + 1}`}
-          className={`w-full h-full object-cover ${
-            // Mobile-specific image positioning
-            index === 0 ? "md:object-center object-top" : // First slide - position top on mobile
-            index === 1 ? "md:object-center object-center" : // Second slide - center on mobile
-            "object-center"
-          }`}
-        />
-        <div className="absolute inset-0 bg-gradient-to-b from-[#1a365d]/70 via-[#2d5a4d]/50 to-[#000000]/60"></div>
-      </motion.div>
-    ))}
-  </div>
+      {/* HERO SECTION */}
+      <section className="relative h-screen w-full flex items-center justify-center overflow-hidden">
+        {/* Background Slider */}
+        <div className="absolute inset-0">
+          {sliderImages.map((image, index) => (
+            <motion.div
+              key={index}
+              className="absolute inset-0"
+              animate={{
+                opacity: currentSlide === index ? 1 : 0,
+                scale: currentSlide === index ? 1 : 1.05,
+              }}
+              transition={{ duration: 2 }}
+            >
+              <img
+                src={image}
+                alt={`Hero ${index + 1}`}
+                className={`w-full h-full object-cover md:object-center
+                  ${index === 0 ? "object-[center_25%]" : ""}
+                  ${index === 1 ? "object-[center_35%]" : ""}`}
+              />
+              <div className="absolute inset-0 bg-gradient-to-b from-[#1a365d]/70 via-[#2d5a4d]/50 to-[#000000]/60"></div>
+            </motion.div>
+          ))}
+        </div>
 
-  {/* Hero Taglines */}
-  <AnimatePresence mode="wait">
-    {/* Slide 1 - Adjusted for mobile to show Vivekananda */}
-    {currentSlide === 0 && (
-      <motion.div
-        key="slide1"
-        initial={{ opacity: 0, y: 40 }}
-        animate={{ opacity: 1, y: 0 }}
-        exit={{ opacity: 0, y: -40 }}
-        transition={{ duration: 1 }}
-        className="absolute left-4 md:left-16 top-32 md:top-48 text-white z-30"
-      >
-        <h2 className="text-2xl md:text-5xl font-bold drop-shadow-lg tracking-wide mb-2">
-          OUR SOURCE OF INSPIRATION
-        </h2>
-        <p className="text-sm md:text-xl text-[#e5e5e5]/90 italic font-light leading-relaxed max-w-xs md:max-w-xl border-l-4 border-[#9ad1b6] pl-3 md:pl-4">
-          SWAMI VIVEKANANDA
-        </p>
-      </motion.div>
-    )}
+        {/* Hero Text Slides */}
+        <AnimatePresence mode="wait">
+          {currentSlide === 0 && (
+            <motion.div
+              key="slide1"
+              initial={{ opacity: 0, y: 40 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -40 }}
+              transition={{ duration: 1 }}
+              className="absolute left-8 md:left-16 top-40 md:top-48 text-white z-30"
+            >
+              <h2 className="text-3xl md:text-5xl font-bold drop-shadow-lg tracking-wide mb-2">
+                OUR SOURCE OF INSPIRATION
+              </h2>
+              <p className="text-base md:text-xl text-[#e5e5e5]/90 italic font-light leading-relaxed max-w-xl border-l-4 border-[#9ad1b6] pl-4">
+                SWAMI VIVEKANANDA
+              </p>
+            </motion.div>
+          )}
 
-    {/* Slide 2 - Centered for mobile, original for desktop */}
-    {currentSlide === 1 && (
-      <motion.div
-        key="slide2"
-        initial={{ opacity: 0, y: 40 }}
-        animate={{ opacity: 1, y: 0 }}
-        exit={{ opacity: 0, y: -40 }}
-        transition={{ duration: 1 }}
-        className="absolute left-1/2 -translate-x-1/2 md:left-16 top-1/2 -translate-y-1/2 md:top-56 md:translate-y-0 md:transform-none text-white z-30 text-center md:text-left w-full px-4"
-      >
-        <h2 className="text-2xl md:text-4xl font-bold drop-shadow-lg tracking-wide mb-2 leading-tight">
-          CLEANLINESS IS NEXT TO <br /> GODLINESS
-        </h2>
-      </motion.div>
-    )}
+          {currentSlide === 1 && (
+            <motion.div
+              key="slide2"
+              initial={{ opacity: 0, y: 40 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -40 }}
+              transition={{ duration: 1 }}
+              className="absolute left-8 md:left-16 top-44 md:top-56 text-white z-30"
+            >
+              <h2 className="text-2xl md:text-4xl font-bold drop-shadow-lg tracking-wide mb-2 leading-tight">
+                CLEANLINESS IS NEXT TO <br /> GODLINESS
+              </h2>
+            </motion.div>
+          )}
 
-    {/* Slide 3 */}
-    {currentSlide === 2 && (
-      <motion.div
-        key="slide3"
-        initial={{ opacity: 0, y: 40 }}
-        animate={{ opacity: 1, y: 0 }}
-        exit={{ opacity: 0, y: -40 }}
-        transition={{ duration: 1 }}
-        className="absolute left-4 md:left-16 top-36 md:top-52 text-white z-30"
-      >
-        <h2 className="text-2xl md:text-5xl font-bold drop-shadow-lg tracking-wide mb-2">
-          SWACCH MANAS
-        </h2>
-        <p className="text-sm md:text-xl text-[#e5e5e5]/90 italic font-light leading-relaxed max-w-xs md:max-w-xl border-l-4 border-[#9ad1b6] pl-3 md:pl-4">
-          After-school program on life skills, cleanliness & civic awareness.
-        </p>
-      </motion.div>
-    )}
+          {currentSlide === 2 && (
+            <motion.div
+              key="slide3"
+              initial={{ opacity: 0, y: 40 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -40 }}
+              transition={{ duration: 1 }}
+              className="absolute left-8 md:left-16 top-44 md:top-52 text-white z-30"
+            >
+              <h2 className="text-3xl md:text-5xl font-bold drop-shadow-lg tracking-wide mb-2">
+                SWACCH MANAS
+              </h2>
+              <p className="text-base md:text-xl text-[#e5e5e5]/90 italic font-light leading-relaxed max-w-xl border-l-4 border-[#9ad1b6] pl-4">
+                After-school program on life skills, cleanliness & civic awareness.
+              </p>
+            </motion.div>
+          )}
 
-    {/* Slide 4 */}
-    {currentSlide === 3 && (
-      <motion.div
-        key="slide4"
-        initial={{ opacity: 0, y: 40 }}
-        animate={{ opacity: 1, y: 0 }}
-        exit={{ opacity: 0, y: -40 }}
-        transition={{ duration: 1 }}
-        className="absolute left-4 md:left-16 top-40 md:top-60 text-white z-30"
-      >
-        <h2 className="text-2xl md:text-5xl font-bold drop-shadow-lg tracking-wide mb-2">
-          SUSTAINABILITY CIRCLES
-        </h2>
-        <p className="text-sm md:text-xl text-[#e5e5e5]/90 italic font-light leading-relaxed max-w-xs md:max-w-xl border-l-4 border-[#9ad1b6] pl-3 md:pl-4">
-          Eco-awareness and Waste Management Training.
-        </p>
-      </motion.div>
-    )}
-  </AnimatePresence>
+          {currentSlide === 3 && (
+            <motion.div
+              key="slide4"
+              initial={{ opacity: 0, y: 40 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -40 }}
+              transition={{ duration: 1 }}
+              className="absolute left-8 md:left-16 top-52 md:top-60 text-white z-30"
+            >
+              <h2 className="text-3xl md:text-5xl font-bold drop-shadow-lg tracking-wide mb-2">
+                SUSTAINABILITY CIRCLES
+              </h2>
+              <p className="text-base md:text-xl text-[#e5e5e5]/90 italic font-light leading-relaxed max-w-xl border-l-4 border-[#9ad1b6] pl-4">
+                Eco-awareness and Waste Management Training.
+              </p>
+            </motion.div>
+          )}
+        </AnimatePresence>
 
-  {/* Slider Dots */}
-  <div className="absolute bottom-10 left-1/2 -translate-x-1/2 flex gap-3 z-40">
-    {sliderImages.map((_, index) => (
-      <button
-        key={index}
-        onClick={() => setCurrentSlide(index)}
-        className={`w-3 h-3 rounded-full border-2 border-white/80 bg-transparent cursor-pointer transition-all duration-300 ease-in-out
-          ${
-            index === currentSlide
-              ? "bg-white scale-125 border-[#2d5a4d] shadow-[0_0_12px_#2d5a4d]"
-              : "hover:bg-[#f5f5dc] hover:border-[#f5f5dc] hover:scale-110"
-          }`}
-      />
-    ))}
-  </div>
-</section>
+        {/* Slider Dots */}
+        <div className="absolute bottom-10 left-1/2 -translate-x-1/2 flex gap-3 z-40">
+          {sliderImages.map((_, index) => (
+            <button
+              key={index}
+              onClick={() => setCurrentSlide(index)}
+              className={`w-3 h-3 rounded-full border-2 border-white/80 bg-transparent cursor-pointer transition-all duration-300 ease-in-out ${
+                index === currentSlide
+                  ? "bg-white scale-125 border-[#2d5a4d] shadow-[0_0_12px_#2d5a4d]"
+                  : "hover:bg-[#f5f5dc] hover:border-[#f5f5dc] hover:scale-110"
+              }`}
+            />
+          ))}
+        </div>
+      </section>
     </>
   );
 }
