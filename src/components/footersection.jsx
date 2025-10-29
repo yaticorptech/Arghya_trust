@@ -56,8 +56,7 @@ const FooterSection = () => {
 
 const contactInfo = {
   visit: `Arghya Trust
-'Viveka Kutira'
-C/o Vidya Umesh, Behind Seetha Nilaya, Old Post Office, Srirangapatna,
+'Viveka Kutira', C/o Vidya Umesh, Behind Seetha Nilaya, Old Post Office, Srirangapatna,
 Mandya - 571438`,
   phone: "+91 744 844 1972",
   mail: "contact@arghyatrust.org",
