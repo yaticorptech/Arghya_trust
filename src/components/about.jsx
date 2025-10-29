@@ -264,7 +264,7 @@ const About = () => {
         className="w-96 md:w-[28rem] h-auto rounded-2xl shadow-lg border-4 border-white/20"
       />
       <img
-        src="https://i.ibb.co/TBWqfMGG/Logokan.jpg"
+        src="https://i.ibb.co/5XN2XYWD/logo111.jpg"
         alt="Arghya Trust Kannada Logo"
         className="w-96 md:w-[28rem] h-auto rounded-2xl shadow-lg border-4 border-white/20"
       />
