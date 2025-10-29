@@ -513,64 +513,51 @@ const About = () => {
     OUR TEAM
   </h3>
 
-  {/* Container same as Trustees */}
-  <div className="bg-[#DBDBDB] rounded-3xl p-8 lg:p-10 shadow-2xl border border-white/20">
-    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 justify-items-center">
-      {[
-        {
-          name: "Mr. Shashidhar M",
-          role: "Director",
-          img: "https://i.ibb.co/1fPg7kZt/OT.jpg",
-          linkedin: "https://www.linkedin.com",
-        },
-      ].map((person, i) => (
-        <motion.div
-          key={i}
-          initial={{ opacity: 0, scale: 0.9 }}
-          whileInView={{ opacity: 1, scale: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5, delay: i * 0.2 }}
-          className="bg-white rounded-2xl p-4 w-64 text-center shadow-lg border border-white/20 hover:shadow-2xl hover:-translate-y-2 transition-all duration-300"
+  {/* Centered, Compact Container */}
+  <div className="bg-[#DBDBDB] rounded-3xl mx-auto max-w-3xl p-8 lg:p-10 shadow-2xl border border-white/20 flex justify-center">
+    <motion.div
+      initial={{ opacity: 0, scale: 0.9 }}
+      whileInView={{ opacity: 1, scale: 1 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.5 }}
+      className="bg-white rounded-2xl p-4 w-64 text-center shadow-lg border border-white/20 hover:shadow-2xl hover:-translate-y-2 transition-all duration-300"
+    >
+      <div className="overflow-hidden rounded-xl mb-4">
+        <img
+          src="https://i.ibb.co/1fPg7kZt/OT.jpg"
+          alt="Mr. Shashidhar M"
+          className="object-cover w-full h-60 rounded-xl hover:scale-105 transition-transform duration-500"
+        />
+      </div>
+      <h4 className="text-lg font-semibold text-[#1a365d]">
+        Mr. Shashidhar M
+      </h4>
+      <p className="text-sm text-[#2d5a4d] font-medium mb-4">Director</p>
+
+      {/* LinkedIn Icon and Bio Button */}
+      <div className="flex justify-center items-center gap-3 mt-3">
+        {/* LinkedIn Icon */}
+        <a
+          href="https://www.linkedin.com"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="flex justify-center items-center w-10 h-10 bg-[#0077B5]/10 rounded-lg hover:bg-[#0077B5]/20 transition-transform hover:scale-105"
         >
-          <div className="overflow-hidden rounded-xl mb-4">
-            <img
-              src={person.img}
-              alt={person.name}
-              className="object-cover w-full h-60 rounded-xl hover:scale-105 transition-transform duration-500"
-            />
-          </div>
-          <h4 className="text-lg font-semibold text-[#1a365d]">
-            {person.name}
-          </h4>
-          <p className="text-sm text-[#2d5a4d] font-medium mb-4">
-            {person.role}
-          </p>
+          <i className="fab fa-linkedin-in text-[#0077B5] text-lg"></i>
+        </a>
 
-          {/* LinkedIn Icon and Bio Button */}
-          <div className="flex justify-center items-center gap-3 mt-3">
-            {/* LinkedIn Icon */}
-            <a
-              href={person.linkedin}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex justify-center items-center w-10 h-10 bg-[#0077B5]/10 rounded-lg hover:bg-[#0077B5]/20 transition-transform hover:scale-105"
-            >
-              <i className="fab fa-linkedin-in text-[#0077B5] text-lg"></i>
-            </a>
-
-            {/* View Bio Button */}
-            <button
-              onClick={() => console.log(`View ${person.name} bio`)}
-              className="flex justify-center items-center w-24 h-10 bg-[#1a365d] text-white rounded-lg hover:bg-[#2d5a4d] transition-colors duration-300 font-medium text-sm"
-            >
-              View Bio
-            </button>
-          </div>
-        </motion.div>
-      ))}
-    </div>
+        {/* View Bio Button */}
+        <button
+          onClick={() => console.log('View Mr. Shashidhar M bio')}
+          className="flex justify-center items-center w-24 h-10 bg-[#1a365d] text-white rounded-lg hover:bg-[#2d5a4d] transition-colors duration-300 font-medium text-sm"
+        >
+          View Bio
+        </button>
+      </div>
+    </motion.div>
   </div>
 </motion.section>
+
 
 
     {/* Impact Section */}
