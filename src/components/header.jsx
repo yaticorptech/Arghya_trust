@@ -326,7 +326,8 @@ const sliderImages = ["https://i.ibb.co/cSBjJZyK/1H.jpg", "https://i.ibb.co/XxXW
         <img
   src={image}
   alt={`Hero ${index + 1}`}
-  className="w-full h-full object-cover sm:object-[80%_center] md:object-center"
+  className="w-full h-full object-cover md:object-center"
+  style={{ objectPosition: "80% center" }}
 />
 
         <div className="absolute inset-0 bg-gradient-to-b from-[#1a365d]/70 via-[#2d5a4d]/50 to-[#000000]/60"></div>
