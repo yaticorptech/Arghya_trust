@@ -1,5 +1,10 @@
 import { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+// import logo from "../assets/images/logo white-bg.jpg"; 
+// import hero1 from "../assets/images/1H.jpg";
+// import hero2 from "../assets/images/2H.jpg";
+// import hero3 from "../assets/images/3H.JPG";
+// import hero4 from "../assets/images/4H.JPG";
 
 export default function Header() {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -9,13 +14,7 @@ export default function Header() {
   const [isHeaderVisible, setIsHeaderVisible] = useState(true);
   const lastScrollY = useRef(0);
 
-  const sliderImages = [
-    "https://i.ibb.co/cSBjJZyK/1H.jpg", 
-    "https://i.ibb.co/XxXWCMjJ/2H.jpg", 
-    "https://i.ibb.co/cXtt8qWf/4H.jpg", 
-    "https://i.ibb.co/v65mT2RX/3H.jpg"
-  ];
-
+const sliderImages = ["https://i.ibb.co/cSBjJZyK/1H.jpg", "https://i.ibb.co/XxXWCMjJ/2H.jpg", "https://i.ibb.co/cXtt8qWf/4H.jpg", "https://i.ibb.co/v65mT2RX/3H.jpg"];
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentSlide((prev) => (prev + 1) % sliderImages.length);
@@ -110,7 +109,7 @@ export default function Header() {
           >
             <div className="relative w-23 h-20">
               <img
-                src="https://i.ibb.co/fzGj1HXS/logo3s.jpg"
+                src="https://i.ibb.co/JjY4RDyZ/image-removebg-preview.png"
                 alt="Arghya Logo"
                 className="w-full h-full object-contain transition-transform duration-800 group-hover:scale-105"
               />
@@ -310,7 +309,7 @@ export default function Header() {
         </AnimatePresence>
       </motion.header>
 
-    {/* HERO SECTION - FIXED FOR MOBILE */}
+    {/* HERO SECTION */}
 <section className="relative h-screen w-full flex items-center justify-center overflow-hidden">
   {/* Background Slider */}
   <div className="absolute inset-0">
@@ -324,19 +323,10 @@ export default function Header() {
         }}
         transition={{ duration: 2 }}
       >
-        {/* Mobile-specific image positioning */}
         <img
           src={image}
           alt={`Hero ${index + 1}`}
-          className={`
-            w-full h-full 
-            ${index === 0 
-              ? "object-cover md:object-cover object-[center_30%]" // First slide - focus on face for mobile
-              : index === 1 
-              ? "object-cover md:object-cover object-center" // Second slide - center for mobile
-              : "object-cover"
-            }
-          `}
+          className="w-full h-full object-cover"
         />
         <div className="absolute inset-0 bg-gradient-to-b from-[#1a365d]/70 via-[#2d5a4d]/50 to-[#000000]/60"></div>
       </motion.div>
@@ -345,7 +335,7 @@ export default function Header() {
 
   {/* Hero Taglines */}
   <AnimatePresence mode="wait">
-    {/* Slide 1 - Vivekananda - Adjusted for mobile */}
+    {/* Slide 1 */}
     {currentSlide === 0 && (
       <motion.div
         key="slide1"
@@ -353,18 +343,18 @@ export default function Header() {
         animate={{ opacity: 1, y: 0 }}
         exit={{ opacity: 0, y: -40 }}
         transition={{ duration: 1 }}
-        className="absolute left-4 md:left-16 top-24 md:top-48 text-white z-30"
+        className="absolute left-8 md:left-16 top-40 md:top-48 text-white z-30"
       >
-        <h2 className="text-2xl md:text-5xl font-bold drop-shadow-lg tracking-wide mb-2">
+        <h2 className="text-3xl md:text-5xl font-bold drop-shadow-lg tracking-wide mb-2">
           OUR SOURCE OF INSPIRATION
         </h2>
-        <p className="text-base md:text-xl text-[#e5e5e5]/90 italic font-light leading-relaxed max-w-xs md:max-w-xl border-l-4 border-[#9ad1b6] pl-3 md:pl-4">
+        <p className="text-base md:text-xl text-[#e5e5e5]/90 italic font-light leading-relaxed max-w-xl border-l-4 border-[#9ad1b6] pl-4">
           SWAMI VIVEKANANDA
         </p>
       </motion.div>
     )}
 
-    {/* Slide 2 - Cleanliness - Centered for mobile only */}
+    {/* Slide 2 — smaller size */}
     {currentSlide === 1 && (
       <motion.div
         key="slide2"
@@ -372,15 +362,16 @@ export default function Header() {
         animate={{ opacity: 1, y: 0 }}
         exit={{ opacity: 0, y: -40 }}
         transition={{ duration: 1 }}
-        className="absolute left-1/2 transform -translate-x-1/2 md:left-16 top-1/2 -translate-y-1/2 md:top-56 md:translate-y-0 text-white z-30 text-center md:text-left w-full px-4"
+        className="absolute left-8 md:left-16 top-44 md:top-56 text-white z-30"
       >
         <h2 className="text-2xl md:text-4xl font-bold drop-shadow-lg tracking-wide mb-2 leading-tight">
-          CLEANLINESS IS NEXT TO <br className="hidden md:block" /> GODLINESS
-        </h2>
+  CLEANLINESS IS NEXT TO <br /> GODLINESS
+</h2>
+
       </motion.div>
     )}
 
-    {/* Slide 3 - Swacch Manas */}
+    {/* Slide 3 */}
     {currentSlide === 2 && (
       <motion.div
         key="slide3"
@@ -388,18 +379,18 @@ export default function Header() {
         animate={{ opacity: 1, y: 0 }}
         exit={{ opacity: 0, y: -40 }}
         transition={{ duration: 1 }}
-        className="absolute left-4 md:left-16 top-28 md:top-52 text-white z-30"
+        className="absolute left-8 md:left-16 top-44 md:top-52 text-white z-30"
       >
-        <h2 className="text-2xl md:text-5xl font-bold drop-shadow-lg tracking-wide mb-2">
+        <h2 className="text-3xl md:text-5xl font-bold drop-shadow-lg tracking-wide mb-2">
           SWACCH MANAS
         </h2>
-        <p className="text-base md:text-xl text-[#e5e5e5]/90 italic font-light leading-relaxed max-w-xs md:max-w-xl border-l-4 border-[#9ad1b6] pl-3 md:pl-4">
+        <p className="text-base md:text-xl text-[#e5e5e5]/90 italic font-light leading-relaxed max-w-xl border-l-4 border-[#9ad1b6] pl-4">
           After-school program on life skills, cleanliness & civic awareness.
         </p>
       </motion.div>
     )}
 
-    {/* Slide 4 - Sustainability */}
+    {/* Slide 4 */}
     {currentSlide === 3 && (
       <motion.div
         key="slide4"
@@ -407,12 +398,12 @@ export default function Header() {
         animate={{ opacity: 1, y: 0 }}
         exit={{ opacity: 0, y: -40 }}
         transition={{ duration: 1 }}
-        className="absolute left-4 md:left-16 top-32 md:top-60 text-white z-30"
+        className="absolute left-8 md:left-16 top-52 md:top-60 text-white z-30"
       >
-        <h2 className="text-2xl md:text-5xl font-bold drop-shadow-lg tracking-wide mb-2">
+        <h2 className="text-3xl md:text-5xl font-bold drop-shadow-lg tracking-wide mb-2">
           SUSTAINABILITY CIRCLES
         </h2>
-        <p className="text-base md:text-xl text-[#e5e5e5]/90 italic font-light leading-relaxed max-w-xs md:max-w-xl border-l-4 border-[#9ad1b6] pl-3 md:pl-4">
+        <p className="text-base md:text-xl text-[#e5e5e5]/90 italic font-light leading-relaxed max-w-xl border-l-4 border-[#9ad1b6] pl-4">
           Eco-awareness and Waste Management Training.
         </p>
       </motion.div>
