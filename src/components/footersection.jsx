@@ -58,7 +58,8 @@ const contactInfo = {
   visit: `Arghya Trust
 'Viveka Kutira'
 C/o Vidya Umesh,Behind Seetha Nilaya
-Old Post Office Road, Srirangapatna Mandya - 571438`,
+Old Post Office Road, Srirangapatna,
+Mandya - 571438`,
   phone: "+91 744 844 1972",
   mail: "connect@arghyatrust.org",
   website: "www.arghyatrust.org",
