@@ -23,18 +23,28 @@ const GallerySlider = () => {
   // Auto-slide functionality
   useEffect(() => {
     if (!isAutoPlaying) return;
+
     const interval = setInterval(() => {
       setCurrentSlide((prev) => (prev + 1) % imageSets.length);
     }, 4000);
+
     return () => clearInterval(interval);
   }, [isAutoPlaying, imageSets.length]);
 
-  const nextSlide = () => setCurrentSlide((prev) => (prev + 1) % imageSets.length);
-  const prevSlide = () => setCurrentSlide((prev) => (prev - 1 + imageSets.length) % imageSets.length);
-  const goToSlide = (index) => setCurrentSlide(index);
+  const nextSlide = () => {
+    setCurrentSlide((prev) => (prev + 1) % imageSets.length);
+  };
+
+  const prevSlide = () => {
+    setCurrentSlide((prev) => (prev - 1 + imageSets.length) % imageSets.length);
+  };
+
+  const goToSlide = (index) => {
+    setCurrentSlide(index);
+  };
 
   return (
-    <section className="relative min-h-screen pt-8 pb-28 overflow-hidden bg-white">
+    <section className="relative min-h-screen pt-8 pb-16 overflow-hidden">
       {/* Background */}
       <div className="fixed inset-0 -z-20">
         <img
@@ -67,7 +77,7 @@ const GallerySlider = () => {
             onMouseLeave={() => setIsAutoPlaying(true)}
           >
             {/* Image grid */}
-            <div className="relative h-auto sm:h-[450px] md:h-[500px]">
+            <div className="relative h-[400px] sm:h-[450px] md:h-[500px]">
               <AnimatePresence mode="wait">
                 <motion.div
                   key={currentSlide}
@@ -81,7 +91,7 @@ const GallerySlider = () => {
                     sm:grid-cols-2 
                     md:grid-cols-3 
                     gap-4 
-                    h-auto
+                    h-full
                   "
                 >
                   {imageSets[currentSlide].map((image, index) => (
@@ -90,12 +100,12 @@ const GallerySlider = () => {
                       initial={{ opacity: 0, y: 40 }}
                       animate={{ opacity: 1, y: 0 }}
                       transition={{ delay: 0.1 * index, duration: 0.6 }}
-                      className="relative group h-[230px] sm:h-[250px] md:h-full"
+                      className="relative group h-[250px] sm:h-full"
                     >
                       <img
                         src={image.src}
                         alt={`Gallery ${index}`}
-                        className="w-full h-full object-cover md:object-center rounded-2xl shadow-xl transform group-hover:scale-105 transition-transform duration-500"
+                        className="w-full h-full object-cover rounded-2xl shadow-xl transform group-hover:scale-105 transition-transform duration-500"
                       />
                       <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-all duration-300 rounded-2xl" />
                     </motion.div>
@@ -114,7 +124,12 @@ const GallerySlider = () => {
                   stroke="currentColor"
                   viewBox="0 0 24 24"
                 >
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M15 19l-7-7 7-7"
+                  />
                 </svg>
               </button>
 
@@ -128,7 +143,12 @@ const GallerySlider = () => {
                   stroke="currentColor"
                   viewBox="0 0 24 24"
                 >
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M9 5l7 7-7 7"
+                  />
                 </svg>
               </button>
             </div>
