@@ -6,12 +6,12 @@ const GallerySlider = () => {
   const [isAutoPlaying, setIsAutoPlaying] = useState(true);
 
   const galleryImages = [
-    { src: "https://i.ibb.co/cSBjJZyK/1H.jpg" },
-    { src: "https://i.ibb.co/XxXWCMjJ/2H.jpg" },
-    { src: "https://i.ibb.co/cXtt8qWf/4H.jpg" },
-    { src: "https://i.ibb.co/v65mT2RX/3H.jpg" },
-    { src: "https://i.ibb.co/cSBjJZyK/1H.jpg" },
-    { src: "https://i.ibb.co/cXtt8qWf/4H.jpg" },
+    { src: "https://i.ibb.co/3yhrZ6xJ/1-OUR-SOURCE-OF-INSPIRATION-SWAMI-VIVEKANADA.jpg" },
+    { src: "https://i.ibb.co/gbtzRYYm/2-CLEANLINESS-IS-NEXT-TO-GODLINESS.jpg" },
+    { src: "https://i.ibb.co/FbPdHjmf/3-SUSTAINABILITY-CIRCLES-Eco-awareness-and-Waste-Management-Training.jpg" },
+    { src: "https://i.ibb.co/sv3FPTyc/4-SWACCH-MANAS-After-school-program-on-life-skills-cleanliness-civic-awareness.jpg" },
+    { src: "https://i.ibb.co/dwPqMh7z/2O.jpg" },
+    { src: "https://i.ibb.co/H0Xg023/1O.jpg" },
   ];
 
   // Group images into sets of 3
