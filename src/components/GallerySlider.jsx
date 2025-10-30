@@ -69,7 +69,7 @@ const GallerySlider = () => {
   };
 
   return (
-    <section className="relative min-h-screen pt-20 pb-16 overflow-hidden"> {/* Increased top padding */}
+    <section className="relative min-h-screen pt-16 md:pt-20 pb-16 overflow-hidden">
       {/* Background */}
       <div className="fixed inset-0 -z-20">
         <img
@@ -82,15 +82,15 @@ const GallerySlider = () => {
       {/* Content */}
       <div className="relative z-10">
         <div className="max-w-6xl mx-auto px-4 sm:px-6">
-          {/* Header - Moved down with more margin top */}
+          {/* Header - Adjusted for mobile */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="text-center mb-12 mt-12" /* Added mt-12 for more top margin */
+            className="text-center mb-8 md:mb-12 mt-8 md:mt-12"
           >
-            <h2 className="text-4xl sm:text-5xl md:text-6xl font-serif font-bold text-[#1a365d] mb-6">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-serif font-bold text-[#1a365d] mb-4 md:mb-6">
               GALLERY
             </h2>
           </motion.div>
@@ -101,8 +101,8 @@ const GallerySlider = () => {
             onMouseEnter={() => setIsAutoPlaying(false)}
             onMouseLeave={() => setIsAutoPlaying(true)}
           >
-            {/* Image grid */}
-            <div className="relative h-[400px] sm:h-[450px] md:h-[500px]">
+            {/* Image grid - Fixed height for mobile */}
+            <div className="relative h-[500px] sm:h-[450px] md:h-[500px]">
               <AnimatePresence mode="wait">
                 <motion.div
                   key={currentSlide}
@@ -115,7 +115,7 @@ const GallerySlider = () => {
                     grid-cols-1 
                     sm:grid-cols-2 
                     md:grid-cols-3 
-                    gap-4 
+                    gap-3 sm:gap-4
                     h-full
                   "
                 >
@@ -125,23 +125,23 @@ const GallerySlider = () => {
                       initial={{ opacity: 0, y: 40 }}
                       animate={{ opacity: 1, y: 0 }}
                       transition={{ delay: 0.1 * index, duration: 0.6 }}
-                      className="relative group h-[250px] sm:h-full"
+                      className="relative group h-[150px] sm:h-[200px] md:h-full"
                     >
                       <img
                         src={image.src}
                         alt={`Gallery ${index}`}
-                        className="w-full h-full object-cover rounded-2xl shadow-xl transform group-hover:scale-105 transition-transform duration-500"
+                        className="w-full h-full object-cover rounded-xl sm:rounded-2xl shadow-lg sm:shadow-xl transform group-hover:scale-105 transition-transform duration-500"
                       />
-                      <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-all duration-300 rounded-2xl" />
+                      <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-all duration-300 rounded-xl sm:rounded-2xl" />
                       
                       {/* Download Button */}
                       <button
                         onClick={() => downloadImage(image.src, getImageName(image.src))}
-                        className="absolute bottom-3 right-3 bg-white/90 hover:bg-white text-gray-800 p-2 rounded-full shadow-lg transform translate-y-2 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300 hover:scale-110"
+                        className="absolute bottom-2 right-2 sm:bottom-3 sm:right-3 bg-white/90 hover:bg-white text-gray-800 p-1.5 sm:p-2 rounded-full shadow-lg transform translate-y-2 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300 hover:scale-110"
                         title="Download image"
                       >
                         <svg
-                          className="w-5 h-5"
+                          className="w-4 h-4 sm:w-5 sm:h-5"
                           fill="none"
                           stroke="currentColor"
                           viewBox="0 0 24 24"
@@ -162,10 +162,10 @@ const GallerySlider = () => {
               {/* Navigation Arrows */}
               <button
                 onClick={prevSlide}
-                className="absolute left-2 sm:-left-6 top-1/2 transform -translate-y-1/2 w-10 sm:w-12 h-10 sm:h-12 bg-white/90 hover:bg-white rounded-full flex items-center justify-center text-gray-800 transition-all duration-300 hover:scale-110 shadow-lg z-10"
+                className="absolute left-1 sm:left-2 md:-left-6 top-1/2 transform -translate-y-1/2 w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 bg-white/90 hover:bg-white rounded-full flex items-center justify-center text-gray-800 transition-all duration-300 hover:scale-110 shadow-lg z-10"
               >
                 <svg
-                  className="w-5 h-5 sm:w-6 sm:h-6"
+                  className="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6"
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24"
@@ -181,10 +181,10 @@ const GallerySlider = () => {
 
               <button
                 onClick={nextSlide}
-                className="absolute right-2 sm:-right-6 top-1/2 transform -translate-y-1/2 w-10 sm:w-12 h-10 sm:h-12 bg-white/90 hover:bg-white rounded-full flex items-center justify-center text-gray-800 transition-all duration-300 hover:scale-110 shadow-lg z-10"
+                className="absolute right-1 sm:right-2 md:-right-6 top-1/2 transform -translate-y-1/2 w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 bg-white/90 hover:bg-white rounded-full flex items-center justify-center text-gray-800 transition-all duration-300 hover:scale-110 shadow-lg z-10"
               >
                 <svg
-                  className="w-5 h-5 sm:w-6 sm:h-6"
+                  className="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6"
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24"
@@ -200,14 +200,14 @@ const GallerySlider = () => {
             </div>
 
             {/* Dots */}
-            <div className="flex justify-center mt-6 space-x-2 sm:space-x-3">
+            <div className="flex justify-center mt-4 sm:mt-6 space-x-2 sm:space-x-3">
               {imageSets.map((_, index) => (
                 <button
                   key={index}
                   onClick={() => goToSlide(index)}
-                  className={`w-3 h-3 rounded-full transition-all duration-300 ${
+                  className={`w-2 h-2 sm:w-3 sm:h-3 rounded-full transition-all duration-300 ${
                     index === currentSlide
-                      ? "bg-blue-600 w-8"
+                      ? "bg-blue-600 w-6 sm:w-8"
                       : "bg-gray-300 hover:bg-gray-400"
                   }`}
                 />
@@ -215,7 +215,7 @@ const GallerySlider = () => {
             </div>
 
             {/* Counter */}
-            <div className="text-center mt-4 text-gray-600 text-sm sm:text-base font-medium">
+            <div className="text-center mt-3 sm:mt-4 text-gray-600 text-xs sm:text-sm md:text-base font-medium">
               {currentSlide + 1} / {imageSets.length}
             </div>
           </div>
