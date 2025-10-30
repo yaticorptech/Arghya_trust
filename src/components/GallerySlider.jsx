@@ -43,8 +43,33 @@ const GallerySlider = () => {
     setCurrentSlide(index);
   };
 
+  // Download image function
+  const downloadImage = async (imageUrl, imageName) => {
+    try {
+      const response = await fetch(imageUrl);
+      const blob = await response.blob();
+      const url = window.URL.createObjectURL(blob);
+      const link = document.createElement('a');
+      link.href = url;
+      link.download = imageName || 'gallery-image.jpg';
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+      window.URL.revokeObjectURL(url);
+    } catch (error) {
+      console.error('Error downloading image:', error);
+    }
+  };
+
+  // Get image name from URL for download
+  const getImageName = (imageUrl) => {
+    const urlParts = imageUrl.split('/');
+    const fileName = urlParts[urlParts.length - 1];
+    return fileName.includes('.') ? fileName : `${fileName}.jpg`;
+  };
+
   return (
-    <section className="relative min-h-screen pt-8 pb-16 overflow-hidden">
+    <section className="relative min-h-screen pt-20 pb-16 overflow-hidden"> {/* Increased top padding */}
       {/* Background */}
       <div className="fixed inset-0 -z-20">
         <img
@@ -57,13 +82,13 @@ const GallerySlider = () => {
       {/* Content */}
       <div className="relative z-10">
         <div className="max-w-6xl mx-auto px-4 sm:px-6">
-          {/* Header */}
+          {/* Header - Moved down with more margin top */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="text-center mb-12"
+            className="text-center mb-12 mt-12" /* Added mt-12 for more top margin */
           >
             <h2 className="text-4xl sm:text-5xl md:text-6xl font-serif font-bold text-[#1a365d] mb-6">
               GALLERY
@@ -108,6 +133,27 @@ const GallerySlider = () => {
                         className="w-full h-full object-cover rounded-2xl shadow-xl transform group-hover:scale-105 transition-transform duration-500"
                       />
                       <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-all duration-300 rounded-2xl" />
+                      
+                      {/* Download Button */}
+                      <button
+                        onClick={() => downloadImage(image.src, getImageName(image.src))}
+                        className="absolute bottom-3 right-3 bg-white/90 hover:bg-white text-gray-800 p-2 rounded-full shadow-lg transform translate-y-2 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300 hover:scale-110"
+                        title="Download image"
+                      >
+                        <svg
+                          className="w-5 h-5"
+                          fill="none"
+                          stroke="currentColor"
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth={2}
+                            d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
+                          />
+                        </svg>
+                      </button>
                     </motion.div>
                   ))}
                 </motion.div>
