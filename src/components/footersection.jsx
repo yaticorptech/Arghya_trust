@@ -328,7 +328,9 @@ Mandya - 571438`,
                   <div className="text-lg mt-0.5 text-gray-600">📍</div>
                   <div className="text-left">
                     <div className="font-semibold text-sm text-gray-900">Visit Us</div>
-                    <div className="text-sm text-gray-700">{contactInfo.visit}</div>
+                    <div className="text-sm text-gray-700 whitespace-pre-line">
+                      {contactInfo.visit}
+                    </div>
                   </div>
                 </div>
 
