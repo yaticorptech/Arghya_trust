@@ -8,7 +8,7 @@ const FloatingSocialSidebar = () => {
     { name: 'WhatsApp', icon: 'fab fa-whatsapp', url: 'https://wa.me/917448441972', color: '#25D366' },
     { name: 'Facebook', icon: 'fab fa-facebook-f', url: 'https://facebook.com/arghyatrust', color: '#1877F2' },
     { name: 'Instagram', icon: 'fab fa-instagram', url: 'https://instagram.com/arghyatrust', color: '#E1306C' },
-    { name: 'LinkedIn', icon: 'fab fa-linkedin-in', url: 'https://linkedin.com/company/arghyatrust', color: '#0A66C2' },
+    { name: 'LinkedIn', icon: 'fab fa-linkedin-in', url: 'https://www.linkedin.com/company/arghya-trust', color: '#0A66C2' },
     { name: 'YouTube', icon: 'fab fa-youtube', url: 'https://youtube.com/@arghyatrust', color: '#FF0000' },
   ];
 
