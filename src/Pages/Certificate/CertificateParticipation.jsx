@@ -25,6 +25,7 @@ function CertificateParticipation() {
     link.download = `${name || 'certificate'}.png`;
     link.href = canvas.toDataURL('image/png');
     link.click();
+    // navigate('/thankyou');
   };
 
   

@@ -66,7 +66,7 @@ function SankalpaLogin() {
         className="bg-white/80 backdrop-blur-lg p-8 rounded-2xl shadow-xl w-full max-w-md border border-gray-200"
       >
         <h2 className="text-3xl font-bold text-center text-indigo-700 mb-6">
-          Certificate
+          Sankalpa
         </h2>
 
         {/* Mobile Number Field */}
@@ -75,7 +75,8 @@ function SankalpaLogin() {
             Enter Your Registered Mobile Number
           </label>
           <div className="flex items-center border border-gray-300 rounded-lg focus-within:ring-2 focus-within:ring-indigo-400 bg-white">
-            <FaPhone className="text-indigo-600 mx-3 text-lg" />
+<FaPhone className="text-indigo-600 mx-2 sm:mx-3 md:mx-4 text-base sm:text-lg md:text-xl" />
+
             <input
               type="text"
               maxLength={10}

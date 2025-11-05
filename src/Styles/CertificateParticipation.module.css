@@ -68,7 +68,7 @@
   margin-top: 10%;
   position: absolute;
   left: 38%;
-  font-size: 3vh;
+  font-size: 2.8vh;
   font-weight: bold;
   color: #e2ff04;
 }
@@ -77,9 +77,9 @@
 /* ✅ Improved Responsive Scaling */
 @media (max-width: 1024px) {
   .name {
-    margin-top: 6%;
+    margin-top:11%;
     right: 35%;
-    font-size: clamp(12px, 2.5vw, 18px);
+    font-size: 2.8vh;
   }
 }
 
@@ -89,9 +89,9 @@
   }
 
   .name {
-    margin-top: 6%;
+    margin-top: 11%;
     right: 35%;
-    font-size: clamp(12px, 2.5vw, 18px);
+    font-size: 2.8vh;
   }
 
 }
@@ -103,9 +103,9 @@
   }
 
   .name {
-    margin-top: 5%;
+    margin-top: 9.5%;
     right: 30%;
-    font-size: clamp(12px, 3vw, 16px);
+    font-size: 2vh;
   }
 
 }
@@ -116,9 +116,9 @@
   }
 
   .name {
-    margin-top: 5%;
+    margin-top: 9.5%;
     right: 30%;
-    font-size: clamp(12px, 3vw, 16px);
+    font-size: 1.5vh;
   }
 
 }

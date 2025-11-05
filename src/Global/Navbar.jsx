@@ -51,17 +51,6 @@ export default function Navbar() {
               Home
             </a>
           </li>
-          <li>
-            <a
-              href="https://yaticorp.com/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="font-medium hover:text-yellow-300 transition duration-200"
-              onClick={() => setIsOpen(false)}
-            >
-              About
-            </a>
-          </li>
         </ul>
       )}
     </nav>

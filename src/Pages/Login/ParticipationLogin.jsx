@@ -75,7 +75,7 @@ function ParticipationLogin() {
             Enter Your Registered Mobile Number
           </label>
           <div className="flex items-center border border-gray-300 rounded-lg focus-within:ring-2 focus-within:ring-indigo-400 bg-white">
-            <FaPhone className="text-indigo-600 mx-3 text-lg" />
+<FaPhone className="text-indigo-600 mx-2 sm:mx-3 md:mx-4 text-base sm:text-lg md:text-xl" />
             <input
               type="text"
               maxLength={10}

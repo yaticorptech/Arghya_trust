@@ -12,11 +12,12 @@ function Thankyou() {
 
       {/* Thank You Text */}
       <h1 className="text-5xl font-extrabold text-gray-800 mb-4">
-        Thank You!
+        Thank you
       </h1>
       <p className="text-lg text-gray-600 max-w-md">
-        We truly appreciate your time and effort. Your response has been recorded successfully.  
-        Have a wonderful day ahead!
+       
+May the Divine Goddess shower you with blessings, guiding you toward wisdom, success, and happiness.
+May your path shine brightly, and may every dream you pursue blossom beautifully.
       </p>
 
     
