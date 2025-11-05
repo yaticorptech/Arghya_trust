@@ -70,7 +70,7 @@
   left: 10%;
   font-size: clamp(10px, 1.4vw, 20px);
   font-weight: bold;
-  color: #262262;
+  color: #ffffff;
 }
 
 .rashi {
@@ -78,7 +78,7 @@
   top: 95%;
   left: 12%;
   font-size: clamp(10px, 1.4vw, 20px);
-  color: #262262;
+  color: #ffffff;
 }
 
 .nakshatra {
@@ -86,7 +86,7 @@
   top: 95%;
   left: 70%;
   font-size: clamp(10px, 1.4vw, 20px);
-  color: #262262;
+  color: #ffffff;
 }
 
 .sankalpa {
@@ -94,7 +94,7 @@
   top: 250%;
   left: 3%;
   font-size: clamp(9px, 1vw, 15px);
-  color: #262262;
+  color: #ffffff;
 }
 
 /* ✅ Improved Responsive Scaling */

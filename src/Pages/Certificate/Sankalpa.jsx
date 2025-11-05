@@ -95,7 +95,7 @@ function Sankalpa() {
       {/* Certificate Display */}
       <div className={styles.certificate} ref={certificateRef}>
         <img
-          src="/Images/card1.jpg"
+          src="/Images/card2.jpg"
           alt="Certificate Background"
           className={styles.certificateBackground}
         />

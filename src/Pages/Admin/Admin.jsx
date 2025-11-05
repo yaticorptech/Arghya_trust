@@ -81,7 +81,7 @@ function Admin() {
       // Name
       pdf.setFont("times", "bold");
       pdf.setFontSize(26);
-      pdf.setTextColor("#ffffffff");
+      pdf.setTextColor("#ffffff");
       pdf.text(name.toUpperCase(), 110, 205);
 
       // Rashi & Nakshatra
@@ -160,7 +160,7 @@ const formattedDate =
           <table className="w-full border-collapse">
             <thead>
               <tr className="bg-gradient-to-r from-blue-500 to-purple-500 text-white">
-                <th className="p-3 text-left">#</th>
+                <th className="p-3 text-left">Sl.No</th>
                 <th className="p-3 text-left">Name</th>
                 <th className="p-3 text-left">Phone</th>
                 <th className="p-3 text-left">Rashi</th>
