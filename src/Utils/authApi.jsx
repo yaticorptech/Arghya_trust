@@ -6,7 +6,7 @@ const apiSecret = import.meta.env.VITE_API_SECRET;
 
 
 export const adminLogin = async (cardNumber, password) => {
- 
+
 
   const response = await axios.post(`${baseURL}/login`, {
     CardNumber: cardNumber,

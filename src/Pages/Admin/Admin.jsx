@@ -20,24 +20,24 @@ function Admin() {
   // ✅ Format-agnostic date filter (handles dd/mm/yyyy, ISO, etc.)
   const filteredParticipants = selectedDate
     ? participants.filter((p) => {
-        const participantDate = p.date || p.Date;
-        if (!participantDate) return false;
+      const participantDate = p.date || p.Date;
+      if (!participantDate) return false;
 
-        try {
-          // Normalize to yyyy-mm-dd
-          const formattedParticipantDate = new Date(
-            participantDate.replace(/(\d{2})\/(\d{2})\/(\d{4})/, "$3-$2-$1")
-          )
-            .toISOString()
-            .split("T")[0];
+      try {
+        // Normalize to yyyy-mm-dd
+        const formattedParticipantDate = new Date(
+          participantDate.replace(/(\d{2})\/(\d{2})\/(\d{4})/, "$3-$2-$1")
+        )
+          .toISOString()
+          .split("T")[0];
 
-          return formattedParticipantDate === selectedDate;
-        } catch {
-          return false;
-        }
-      })
+        return formattedParticipantDate === selectedDate;
+      } catch {
+        return false;
+      }
+    })
     : participants;
-
+  console.log("Filtered Participants:", filteredParticipants);
   // ✅ Generate PDF for filtered participants
   const handleDownloadAll = async () => {
     if (filteredParticipants.length === 0) {
@@ -55,16 +55,16 @@ function Admin() {
 
     const pageWidth = pdf.internal.pageSize.getWidth();
     const pageHeight = pdf.internal.pageSize.getHeight();
-    const bgImg = "/Images/card2.jpg"; // Ensure this image is in /public/Images/
+    const bgImg = "/Images/card2print.jpg"; // Ensure this image is in /public/Images/
 
     for (let i = 0; i < filteredParticipants.length; i++) {
       const p = filteredParticipants[i];
       const name = p.name || p.Name || "Name";
-     
+
       const rashi = p.rashi || p.Rashi || "Rashi";
       const nakshatra = p.nakshatra || p.Nakshatra || "Nakshatra";
       const sankalpa = p.sankalpa || p.Sankalpa || "Sankalpa";
-      
+
 
       // Draw certificate background
       await new Promise((resolve) => {
@@ -76,7 +76,7 @@ function Admin() {
         };
       });
 
-      
+
 
       // Name
       pdf.setFont("times", "bold");
@@ -99,25 +99,27 @@ function Admin() {
       );
       pdf.text(sankalpaLines, 50, 290);
 
-      
+
       // Add new page (except last one)
       if (i !== filteredParticipants.length - 1) pdf.addPage();
     }
-const formattedDate =
-  selectedDate ||
-  (filteredParticipants[0]?.date || filteredParticipants[0]?.Date
-    ? new Date(
-        (filteredParticipants[0].date || filteredParticipants[0].Date).replace(
-          /(\d{2})\/(\d{2})\/(\d{4})/,
-          "$3-$2-$1"
+    const formattedDate =
+      selectedDate ||
+      (filteredParticipants[0]?.date || filteredParticipants[0]?.Date
+        ? new Date(
+          (filteredParticipants[0].date || filteredParticipants[0].Date).replace(
+            /(\d{2})\/(\d{2})\/(\d{4})/,
+            "$3-$2-$1"
+          )
         )
-      )
-        .toLocaleDateString("en-GB")
-        .replace(/\//g, "-")
-    : "All");
+          .toLocaleDateString("en-GB")
+          .replace(/\//g, "-")
+        : "All");
     pdf.save(`Sankalpa(${formattedDate}).pdf`);
     toast.success("Certificates downloaded successfully!");
   };
+
+
 
   return (
     <div className="min-h-screen bg-gray-100">
@@ -180,12 +182,16 @@ const formattedDate =
                     <td className="p-3">
                       {p.date || p.Date
                         ? new Date(
-                            (p.date || p.Date).replace(
-                              /(\d{2})\/(\d{2})\/(\d{4})/,
-                              "$3-$2-$1"
-                            )
-                          ).toLocaleDateString("en-GB")
+                          (p.date || p.Date).replace(
+                            /(\d{2})\/(\d{2})\/(\d{4})/,
+                            "$3-$2-$1"
+                          )
+                        )
+                          .toISOString()
+                          .split("T")[0] // <-- this keeps only the 'YYYY-MM-DD' part
                         : "N/A"}
+
+
                     </td>
                   </tr>
                 ))

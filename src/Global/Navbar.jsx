@@ -27,7 +27,7 @@ export default function Navbar() {
               Home
             </a>
           </li>
-         
+
         </ul>
 
         {/* Mobile Menu Icon */}

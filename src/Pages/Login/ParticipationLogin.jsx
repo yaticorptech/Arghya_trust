@@ -25,7 +25,7 @@ function ParticipationLogin() {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    const errors = validatesankalpalogin(phone );
+    const errors = validatesankalpalogin(phone);
     if (Object.keys(errors).length) {
       toast.error(Object.values(errors).join(" "));
       return;
@@ -38,10 +38,10 @@ function ParticipationLogin() {
         "https://script.google.com/macros/s/AKfycbxLbmisRbn87AKjwi-ntSThn1pRr_37iKt_NyJuVsuRwMYbVzV9qAJnBcwSQ6T827AwFg/exec",
         { params: { phone } }
       );
-    
-     
+
+
       const apiData = res.data;
-     
+
       if (apiData.count > 0) {
         navigate("/certificate", { state: { apiData } });
       } else {
@@ -58,8 +58,8 @@ function ParticipationLogin() {
   };
 
   return (
-   <div className="flex items-center justify-center min-h-screen bg-gradient-to-br from-blue-100 via-indigo-100 to-purple-100 px-4">
-       <Navbar/>
+    <div className="flex items-center justify-center min-h-screen bg-gradient-to-br from-blue-100 via-indigo-100 to-purple-100 px-4">
+      <Navbar />
       <ToastContainer />
       <form
         onSubmit={handleSubmit}
@@ -75,7 +75,7 @@ function ParticipationLogin() {
             Enter Your Registered Mobile Number
           </label>
           <div className="flex items-center border border-gray-300 rounded-lg focus-within:ring-2 focus-within:ring-indigo-400 bg-white">
-<FaPhone className="text-indigo-600 mx-2 sm:mx-3 md:mx-4 text-base sm:text-lg md:text-xl" />
+            <FaPhone className="text-indigo-600 mx-2 sm:mx-3 md:mx-4 text-base sm:text-lg md:text-xl" />
             <input
               type="text"
               maxLength={10}
@@ -97,11 +97,10 @@ function ParticipationLogin() {
         <button
           type="submit"
           disabled={loading}
-          className={`w-full py-2.5 text-white font-semibold rounded-lg transition duration-300 ${
-            loading
+          className={`w-full py-2.5 text-white font-semibold rounded-lg transition duration-300 ${loading
               ? "bg-indigo-300 cursor-not-allowed"
               : "bg-indigo-600 hover:bg-indigo-700 shadow-md hover:shadow-lg"
-          }`}
+            }`}
         >
           {loading ? (
             <div className="flex justify-center items-center gap-2">
