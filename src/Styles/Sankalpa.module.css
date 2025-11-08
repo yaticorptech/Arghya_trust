@@ -1,0 +1,217 @@
+.certificateContainer {
+  display: flex;
+  flex-direction: column;
+  margin-top: 15%;
+  align-items: center;
+  padding: 5vh;
+  background-color: #f9f9f9;
+}
+
+.downloadButton {
+  margin-top: 2vh;
+  padding: 1vh 2vw;
+  background-color: #0077cc;
+  color: white;
+  border: none;
+  border-radius: 0.6rem;
+  font-size: clamp(0.8rem, 1vw, 1.2rem);
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.downloadButton:hover {
+  background-color: #005fa3;
+}
+
+.dropdown {
+  margin: 10px 0;
+  padding: 8px 12px;
+  font-size: clamp(14px, 1.5vw, 18px);
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  outline: none;
+}
+
+.certificate {
+  position: relative;
+  width: 90vw;
+  max-width: 720px;
+  aspect-ratio: 6 / 4;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+  overflow: hidden;
+  font-family: 'Georgia', serif;
+}
+
+.certificateBackground {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 0;
+}
+
+.certificateContent {
+  position: absolute;
+  z-index: 2;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -40%);
+  text-align: left;
+  width: 90%;
+  color: #333;
+  padding: 0 5%;
+}
+
+.name {
+  margin-top: 5%;
+  position: relative;
+  left: 10%;
+  font-size: clamp(10px, 1.4vw, 20px);
+  font-weight: bold;
+  color: #ffffff;
+}
+
+.rashi {
+  position: absolute;
+  top: 95%;
+  left: 12%;
+  font-size: clamp(10px, 1.4vw, 20px);
+  color: #ffffff;
+}
+
+.nakshatra {
+  position: absolute;
+  top: 95%;
+  left: 70%;
+  font-size: clamp(10px, 1.4vw, 20px);
+  color: #ffffff;
+}
+
+.sankalpa {
+  position: absolute;
+  top: 250%;
+  left: 3%;
+  font-size: clamp(9px, 1vw, 15px);
+  color: #ffffff;
+}
+
+/* ✅ Improved Responsive Scaling */
+@media (max-width: 1024px) {
+  .name {
+    margin-top: 6%;
+    right: 35%;
+    font-size: clamp(12px, 2.5vw, 18px);
+  }
+
+  .rashi {
+   top: 100%;
+    left: 12%;
+    font-size: clamp(12px, 2.5vw, 18px);
+  }
+
+  .nakshatra {
+    top: 100%;
+    left: 70%;
+    font-size: clamp(12px, 2.5vw, 18px);
+  }
+
+  .sankalpa {
+  top: 240%;
+    left: 2%;
+    font-size: clamp(10px, 2vw, 15px);
+  }
+}
+
+@media (max-width: 768px) {
+  .certificate {
+    width: 95vw;
+  }
+
+  .name {
+    margin-top: 6%;
+    right: 35%;
+    font-size: clamp(12px, 2.5vw, 18px);
+  }
+
+  .rashi {
+    top: 100%;
+    left: 12%;
+    font-size: clamp(12px, 2.5vw, 18px);
+  }
+
+  .nakshatra {
+    top: 100%;
+    left: 70%;
+    font-size: clamp(12px, 2.5vw, 18px);
+  }
+
+  .sankalpa {
+    top: 240%;
+    left: 3%;
+    font-size: clamp(10px, 2vw, 14px);
+  }
+}
+
+@media (max-width: 480px) {
+  .certificate {
+    width: 100vw;
+    max-width: none;
+  }
+
+  .name {
+    margin-top: 5%;
+    right: 30%;
+    font-size: clamp(12px, 3vw, 16px);
+  }
+
+  .rashi {
+    top: 95%;
+    left: 12%;
+    font-size: clamp(10px, 3vw, 16px);
+  }
+
+  .nakshatra {
+    top: 95%;
+    left: 72%;
+    font-size: clamp(10px, 3vw, 16px);
+  }
+
+  .sankalpa {
+    top: 240%;
+    left:2%;
+    font-size: clamp(9px, 3vw, 8px);
+  }
+}
+@media (max-width: 320px) {
+  .certificate {
+    width: 100vw;
+    max-width: none;
+  }
+
+  .name {
+    margin-top: 5%;
+    right: 30%;
+    font-size: clamp(12px, 3vw, 16px);
+  }
+
+  .rashi {
+    top: 85%;
+    left: 12%;
+    font-size: clamp(10px, 3vw, 16px);
+  }
+
+  .nakshatra {
+    top: 85%;
+    left: 72%;
+    font-size: clamp(10px, 3vw, 16px);
+  }
+
+  .sankalpa {
+    top: 210%;
+    left: 3%;
+    font-size: clamp(8px, 2vw, 6px);
+  }
+}
+
