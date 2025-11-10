@@ -12,15 +12,10 @@ function SankalpaLogin() {
   const [errors, setErrors] = useState({});
   const [loading, setLoading] = useState(false);
 
-  const [language, setLanguage] = useState(
-    localStorage.getItem("preferredLanguage") || "en"
-  );
+
   const navigate = useNavigate();
 
-  const handleLanguageChange = (e) => {
-    setLanguage(e.target.value);
-    localStorage.setItem("preferredLanguage", e.target.value);
-  };
+
 
   const handleSubmit = async (e) => {
     e.preventDefault();
