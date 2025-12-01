@@ -4,7 +4,7 @@ import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { useNavigate } from "react-router-dom";
 import { validatesankalpalogin } from "../../Utils/Vaildation";
-import axios from "axios";
+import { sankalpalogin } from "../../Utils/authApi.jsx";
 import Navbar from "../../Global/Navbar";
 
 function ParticipationLogin() {
@@ -34,15 +34,12 @@ function ParticipationLogin() {
     setLoading(true);
     setErrors({});
     try {
-      const res = await axios.get(
-        "https://script.google.com/macros/s/AKfycbxLbmisRbn87AKjwi-ntSThn1pRr_37iKt_NyJuVsuRwMYbVzV9qAJnBcwSQ6T827AwFg/exec",
-        { params: { phone } }
-      );
+      const res = await sankalpalogin(phone);
 
 
       const apiData = res.data;
 
-      if (apiData.count > 0) {
+      if (apiData) {
         navigate("/certificate", { state: { apiData } });
       } else {
         toast.error("Invalid response from server.");

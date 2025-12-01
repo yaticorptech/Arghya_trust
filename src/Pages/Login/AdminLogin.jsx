@@ -2,10 +2,12 @@ import React, { useState } from 'react';
 import { FaRegCreditCard, FaLock, FaEye, FaEyeSlash } from 'react-icons/fa';
 import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import axios from 'axios';
+import  { adminlogin } from '../../Utils/authApi.jsx';
 import { validateAdminLogin } from '../../Utils/Vaildation';
 import { useNavigate } from 'react-router-dom';
 import Navbar from '../../Global/Navbar';
+import axios from 'axios';
+import { a } from 'framer-motion/client';
 
 function AdminLogin() {
   const [cardNumber, setCardNumber] = useState('');
@@ -30,10 +32,9 @@ function AdminLogin() {
     setLoading(true);
     try {
       if (cardNumber === number && password === pass) {
-        const res = await axios.get(
-          "https://script.google.com/macros/s/AKfycbzLJusZ_UVo9ZeYbjTxstpHtYAbNGD1oJ_OjQp9zzn_n8ui-3mB7uDVayAcSsAsrX6k/exec"
-        );
-        const apiData = res.data;
+        const res = await adminlogin();
+        const apiData = res;
+        console.log("Admin login successful:", apiData);
         toast.success('✅ Login successful! Redirecting...');
 
         setTimeout(() => navigate('/admin', { state: { apiData } }), 1500);

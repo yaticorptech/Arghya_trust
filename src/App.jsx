@@ -1,5 +1,8 @@
 import React, { Suspense, lazy } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { ToastContainer } from "react-toastify";
+
+
 
 // Lazy imports
 const Header = lazy(() => import('./components/header'));
@@ -18,6 +21,8 @@ const CertificateParticipation = lazy(() => import('./Pages/Certificate/Certific
 
 function App() {
   return (
+    <>
+     <ToastContainer position="top-center" autoClose={2000} />
     <Router>
       {/* Full-screen spinner while components load */}
       <Suspense
@@ -67,9 +72,11 @@ function App() {
           <Route path="/admin" element={<Admin />} />
           <Route path="/certificatelogin" element={<ParticipationLogin />} />
           <Route path="/certificate" element={<CertificateParticipation />} />
+        
         </Routes>
       </Suspense>
     </Router>
+    </>
   );
 }
 

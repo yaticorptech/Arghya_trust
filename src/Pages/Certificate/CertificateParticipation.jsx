@@ -12,10 +12,10 @@ function CertificateParticipation() {
   const navigate = useNavigate();
   const data = location.state || {};
 
-  const participants = data.apiData?.data || [];
+  const participants = data.apiData || [];
 
 
-  const name = participants[0].name || 'Name';
+  const name = participants.name || 'Name';
 
 
   // ✅ Download certificate (fixed size 432x289)
